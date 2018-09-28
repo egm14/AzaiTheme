@@ -4,7 +4,7 @@
 	      setTimeout(function () {
 		    $(".loader-page").css({visibility:"hidden",opacity:"0"})
 		  }, 300);
-		  console.log("Spinner fuera");
+		  console.log("Spinner fuera luego del documento estar ready");
 		});
 
 $(document).ready(function(){
@@ -36,12 +36,12 @@ $(document).ready(function(){
 		$(".loader-page").css({visibility:"visibe",opacity:"100"});
      }
      /*==================== SPINNER ELEMENT LINK A  =======================*/
-     $("a").on('touchstart', function () {
+     /*$("a").on('touchstart', function () {
 	      setTimeout(function () {
 		    $(".loader-page").css({visibility:"visible",opacity:"1"})
 		  }, 300);
 		  console.log("Spinner fuera");
-		});
+		});*/
      /*==================== SIZE CHART  =======================*/
 
      /* SIZE - CHART- FANCYBOX*/
