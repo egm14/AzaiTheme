@@ -1,0 +1,21 @@
+html, body{
+  height: 100%;
+}
+@media screen and (min-width: 769px){
+body { 
+  background: url(http://azai.com/azai-coming-soon-computer.png) no-repeat center top fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+}
+@media screen and (max-width: 768px){
+body { 
+  background: url(http://azai.com/azai-coming-soon-mobil.png) no-repeat center top fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+}
