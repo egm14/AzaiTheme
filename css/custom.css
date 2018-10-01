@@ -1,6 +1,6 @@
 /*
 CSS Personalizado para la Tienda AZAI Store
-By Azai.com | en repositorio github.com
+By Azai.com
 */
 
 /*Zoom products*/
@@ -2099,7 +2099,7 @@ div.btn_action.btn-list{text-align: center;}
 
 @media only screen and (max-width: 640px){
 .mobil{display:block;}
-.desk{display:none;}
+.desk{display:none;}pa
 #ship{width:100%!important;background:black;color:white;display:block!important;text-transform:uppercase;font-size:0.8em;margin-bottom: 4px; margin: 0px 0px 0px 0px;}
 #header > .wrapper .module{line-height: 1px; margin-top:2.7px;}
 #header .row #header_logo {margin-bottom: 0px!important; margin-left: 8px;}
@@ -2241,7 +2241,7 @@ img.fancybox-inner {
     div.fancybox-wrap.fancybox-desktop.fancybox-type-image.fancybox-opened{width: 100%; top:0px; left: 0px;}
     div.fancybox-skin{padding: 1px;}
 
-    .fancybox-inner {/*overflow: hidden !important;*/position: relative; width:329px; height: 445px;}
+    .fancybox-inner {overflow: visible!important; /*overflow: hidden !important;*/position: relative; width:329px; height: 445px;}
     img.fancybox-inner {
         position: absolute;
         display: block;
@@ -2575,7 +2575,24 @@ a.btn.btn-primary {
 
 select#idWishlist {
     width: auto;
+    left: 23px;
+    position: relative;
+    top: 17px;
 }
 .box-cart-bottom #wishlist_button_block button.btn.btn-primary {
+    background: none;
+    color: black;
+    border-radius: 0px;
+    -moz-box-shadow: inset 0 0 0 2px #000000;
+    -webkit-box-shadow: inset 0 0 0 2px #ffffff;
+    box-shadow: inset 0 0 0 2px #ffffff;
+    border: none;
+    text-decoration: underline;
+    text-transform: initial;
     left: 30px;
+    top: 17px;
+}
+i.icon-heart::before {
+    content: "\f004";
+    font-family: "FontAwesome";
 }
