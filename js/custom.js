@@ -36,12 +36,21 @@ $(document).ready(function(){
 		$(".loader-page").css({visibility:"visibe",opacity:"100"});
      }
      /*==================== SPINNER ELEMENT LINK A  =======================*/
-     /*$("a").on('touchstart', function () {
-	      setTimeout(function () {
+     var aLink = $("a");
+      
+     aLink.on('touchstart', function () {
+     	console.log("Atributo href verificado");
+	      if(aLink.attr("href") != " " || aLink.attr("href") != "#"){
+	      	setTimeout(function () {
 		    $(".loader-page").css({visibility:"visible",opacity:"1"})
 		  }, 300);
-		  console.log("Spinner fuera");
-		});*/
+	      	console.log("Elemento A con referencia");
+	      }else{
+	      	console.log("Elemento A sin referencia");
+	      }
+		  console.log("Spinner in/out");
+		});
+
      /*==================== SIZE CHART  =======================*/
 
      /* SIZE - CHART- FANCYBOX*/
