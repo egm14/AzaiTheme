@@ -2490,7 +2490,7 @@ a[data-zoom-id] img, .mz-thumb img {
 .dropdown:hover .dropdown-content {
     display: block;
 }
-/*Border to wishlist*/
+/****Border to wishlist****/
 div#advansedwishlist_block {
     border: solid 1px #ebebeb;
     padding: 20px 8px 0px 0px;
