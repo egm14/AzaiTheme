@@ -30,30 +30,26 @@
           <footer id="footer">
             {if $displayMegaFooter}
               {$displayMegaFooter}
-
-              <div class="footerMobil">
-
               <div id="redes-desk" class="container" style="display:block;text-align: center;"> 	
               	 <a href="https://www.facebook.com/azaistore" target="_blank"><!--<img src="/img/azai-facebook.png" alt="Azai Facebook" width="40" />--><i class="fa fa-facebook" aria-hidden="true"></i></a>
-              	 <a href="https://twitter.com/azaistore" target="_blank">
+              	 <a href="https://www.instagram.com/azaistore/" target="_blank"><!--<img src="/img/azai-instagram.png" alt="Azai Instagram" width="40" />--><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                <a href="https://twitter.com/azaistore" target="_blank">
                   <!--<img src="/img/azai-twitter.png" alt="Azai Twitter" width="40" />-->
                   <i class="fa fa-twitter" aria-hidden="true"></i></a>
-              	 <a href="https://www.instagram.com/azaistore/" target="_blank"><!--<img src="/img/azai-instagram.png" alt="Azai Instagram" width="40" />--><i class="fa fa-instagram" aria-hidden="true"></i></a>
               </div>
-                	<!--<div id="redes-mob2" class="container" style="display:none;text-align: center;padding: 0px 70px;">
-                		<div class="col-xs-4 col-sm-4 col-md-4"><a href="https://www.facebook.com/azaistore"><img src="/img/azai-facebook.png" alt="Azai Facebook" width="40" /></a></div>
-                		<div class="col-xs-4 col-sm-4 col-md-4"><a href="https://twitter.com/azaistore"><img src="/img/azai-twitter.png" alt="Azai Twitter" width="40" /></a></div>
-                		<div class="col-xs-4 col-sm-4 col-md-4"><a href="https://www.instagram.com/azaistore/"><img src="/img/azai-instagram.png" alt="Azai Instagram" width="40" /></a></div>
-                	 </div>-->
+	<!--<div id="redes-mob2" class="container" style="display:none;text-align: center;padding: 0px 70px;">
+		<div class="col-xs-4 col-sm-4 col-md-4"><a href="https://www.facebook.com/azaistore"><img src="/img/azai-facebook.png" alt="Azai Facebook" width="40" /></a></div>
+		<div class="col-xs-4 col-sm-4 col-md-4"><a href="https://twitter.com/azaistore"><img src="/img/azai-twitter.png" alt="Azai Twitter" width="40" /></a></div>
+		<div class="col-xs-4 col-sm-4 col-md-4"><a href="https://www.instagram.com/azaistore/"><img src="/img/azai-instagram.png" alt="Azai Instagram" width="40" /></a></div>
+	 </div>-->
              {if $lang_iso == 'en'}
               <div class="copyright">©CopyRight 2018 AZAI STORE. All Right Reserved</div>
               
-            	{elseif $lang_iso == 'es'}
-            	<div class="copyright">©CopyRight 2018 AZAI STORE. TODOS LOS DERECHOS RESERVADOS</div>
+	{elseif $lang_iso == 'es'}
+	<div class="copyright">©CopyRight 2018 AZAI STORE. TODOS LOS DERECHOS RESERVADOS</div>
 						   {/if}
-             </div>
 	
-         {else}
+            {else}
               <div class="container">
                 {$HOOK_FOOTER}
                

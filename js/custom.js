@@ -4,8 +4,8 @@
 	      setTimeout(function () {
 		    $(".loader-page").css({visibility:"hidden",opacity:"0"})
 		  }, 300);
-		  console.log("Spinner fuera luego del documento estar ready");
 		});
+
 
 $(document).ready(function(){
 	/*==================== SECTION PRODUCT - AJAX BLOCK CART =======================*/
@@ -35,22 +35,6 @@ $(document).ready(function(){
      function openLoader(e){
 		$(".loader-page").css({visibility:"visibe",opacity:"100"});
      }
-     /*==================== SPINNER ELEMENT LINK A  =======================*/
-     var aLink = $("a");
-      
-     aLink.on('touchstart', function () {
-     	console.log("Atributo href verificado");
-	      if(aLink.attr("href") != " " || aLink.attr("href") != "#"){
-	      	setTimeout(function () {
-		    $(".loader-page").css({visibility:"visible",opacity:"1"})
-		  }, 300);
-	      	console.log("Elemento A con referencia");
-	      }else{
-	      	console.log("Elemento A sin referencia");
-	      }
-		  console.log("Spinner in/out");
-		});
-
      /*==================== SIZE CHART  =======================*/
 
      /* SIZE - CHART- FANCYBOX*/

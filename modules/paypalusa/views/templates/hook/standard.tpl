@@ -64,7 +64,7 @@
 		<input type="hidden" name="cancel_return" value="{$paypal_usa_cancel_url|escape:'htmlall':'UTF-8'}" />
 		<input type="hidden" name="no_shipping" value="1" />
 		<input type="hidden" name="bn" value="PrestashopUS_Cart" />
-		<input id="paypal-standard-btn" type="image" name="submit" src="https://dev.azai.com/modules/revsliderprestashop/uploads/paypal_button_v1.png" alt="" style="vertical-align: middle; margin-right: 10px auto;" /> {l s='' mod='paypalusa'}
+		<input id="paypal-standard-btn" type="image" name="submit" src="https://azai.com/modules/revsliderprestashop/uploads/paypal_button_v1.png" alt="" style="vertical-align: middle; margin-right: 10px auto;" /> {l s='' mod='paypalusa'}
 	</p>
 </form>
 </div>
