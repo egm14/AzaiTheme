@@ -13,3 +13,9 @@ ehthumbs.db
 .class
 .sh
 .so
+
+
+# Cache Folder #
+######################
+cache/*
+cache/
