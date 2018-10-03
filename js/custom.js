@@ -4,8 +4,8 @@
 	      setTimeout(function () {
 		    $(".loader-page").css({visibility:"hidden",opacity:"0"})
 		  }, 300);
+		  console.log("Spinner fuera luego del documento estar ready");
 		});
-
 
 $(document).ready(function(){
 	/*==================== SECTION PRODUCT - AJAX BLOCK CART =======================*/
@@ -35,12 +35,45 @@ $(document).ready(function(){
      function openLoader(e){
 		$(".loader-page").css({visibility:"visibe",opacity:"100"});
      }
+     /*==================== SPINNER ELEMENT LINK A  =======================*/
+     var aLink = $("a");
+     var div = $("div");
+      
+     aLink.on('touchstart', loadSpiner);
+     aLink.unbind('preventDefault');
+
+     function loadSpiner() {
+     	var href = location.href;
+     	console.log("location: " + href);
+     	var href2 = aLink.attr("href");
+     	var bLink;
+
+     	if(href != href2){
+     		bLink = false;
+     		console.log("no son iguales los link");
+     	}else{
+     		bLink = true;
+     		console.log("son iguales los link");
+     	}
+     	console.log("Atributo href verificado");
+
+	      if((aLink.attr("href") != " " || aLink.attr("href") != "#") && bLink != true){
+	      	setTimeout(function () {
+		    $(".loader-page").css({visibility:"visible",opacity:"1"})
+		  }, 300);
+	      	console.log("Elemento A con referencia: " + aLink.attr("href"));
+	      }else{
+	      	console.log("Elemento A sin referencia");
+	      }
+		  console.log("Spinner in/out");
+		};
+
      /*==================== SIZE CHART  =======================*/
 
      /* SIZE - CHART- FANCYBOX*/
 	  $('.sizes-chart').on("click", function(e){
 	  	e.preventDefault();
-	  	console.log("me hicieron click");
+	  	console.log("Size-chart: me hicieron click");
 
 	  	if (window.innerWidth > 768) {
 	  		var wid = 500;
@@ -130,6 +163,7 @@ $(document).ready(function(){
 	mobilmenu.on("touchstart", function(e){
 		$('.top_menu').find('.iconos-menu-mobile').toggleClass('active-imb');
 		console.log('click creado para abrir nuevo menu');
+		/*loadSpiner();*/
 	});
 
 	$('.icon-menu-login').on("touchstart", function(e){
