@@ -131,6 +131,13 @@ button.btn-md.btn.btn-default.icon-right {border: solid 1px #aaaaaa;}
  ******************* General CSS Changel  *********************
  ***************************************************************/
 
+/*-------- 7% tax Gift Card -------------*/
+.gift-card-text{
+    color:red;
+    margin-left:3px;
+    font-size:0.8em;
+    vertical-align:super;
+}
 /*---------Product Page Change ---------------*/
 .pb-right-column h1{
     font-family: 'Didot-Italic', cursive!important;
