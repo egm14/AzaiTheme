@@ -48,7 +48,7 @@ $(document).ready(function(){
 		//console.log(event);
 
 		  if((aL.localName = "a") && (aLink != aBaseUri) && (aLink != null) && (aLink != "javascript") && 
-		  	(aLink != BaseUriD) && (aL.className == "add_to_compare")){
+		  	(aLink != BaseUriD) && (aL.classList[0] != "add_to_compare")){
 	      	setTimeout(function () {
 		    $(".loader-page").css({visibility:"visible",opacity:"1"})
 		  }, 300);
