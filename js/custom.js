@@ -27,46 +27,37 @@ $(document).ready(function(){
     	},3000);
      });
 
-     /*$('.shopping_cart').find('a').on("click", openLoader);*/
      $('.shopping_cart').one("touchstart", setTimeout(openLoader,300));
      $('#button_order_cart').on("click", openLoader);
-     /*$('#button_order_cart').on("touchstart",setTimeout(openLoader,300));*/
 
      function openLoader(e){
 		$(".loader-page").css({visibility:"visibe",opacity:"100"});
      }
+
      /*==================== SPINNER ELEMENT LINK A  =======================*/
-     var aLink = $("a");
-     var div = $("div");
-      
-     aLink.on('touchstart', loadSpiner);
-     aLink.unbind('preventDefault');
+     $('a').on('touchstart', function loadSpiner(event) {
+     	var aL = event.currentTarget;
+     	var aLink = aL.href;
+     	var aBaseUri = aL.baseURI;
+     	var BaseUriD = aBaseUri + "#";
 
-     function loadSpiner() {
-     	var href = location.href;
-     	console.log("location: " + href);
-     	var href2 = aLink.attr("href");
-     	var bLink;
+     	//console.log("Elemento href: " + aLink);
+     	//console.log("BaseUri: " + aBaseUri);
+		//console.log("verificando elemento ejecutor: " + aL.localName);  
+		//console.log("BaseUriD: " + BaseUriD);
+		//console.log(event);
 
-     	if(href != href2){
-     		bLink = false;
-     		console.log("no son iguales los link");
-     	}else{
-     		bLink = true;
-     		console.log("son iguales los link");
-     	}
-     	console.log("Atributo href verificado");
-
-	      if((aLink.attr("href") != " " || aLink.attr("href") != "#") && bLink != true){
-	      	setTimeout(function () {
+		  if((aL.localName = "a") && (aLink != aBaseUri) && (aLink != null) && (aLink != "javascript") && 
+		  	(aLink != BaseUriD) && (aL.className == "add_to_compare")){
+	      	/*setTimeout(function () {
 		    $(".loader-page").css({visibility:"visible",opacity:"1"})
-		  }, 300);
-	      	console.log("Elemento A con referencia: " + aLink.attr("href"));
+		  }, 300);*/
+	      	console.log("Spinner a mostrar");
 	      }else{
-	      	console.log("Elemento A sin referencia");
+	      	console.log("No se puede mostrar spinner");
 	      }
 		  console.log("Spinner in/out");
-		};
+		});
 
      /*==================== SIZE CHART  =======================*/
 
