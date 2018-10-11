@@ -47,7 +47,7 @@ $(document).ready(function(){
 		//console.log("BaseUriD: " + BaseUriD);
 		//console.log(event);
 
-		  if((aL.localName = "a") && (aLink != aBaseUri) && (aLink != null) && (aLink != "javascript") && 
+		  if((aL.localName = "a") && (aLink != aBaseUri) && (aLink != null) && (aLink != "javascript:;") && 
 		  	(aLink != BaseUriD) && (aL.classList[0] != "add_to_compare")){
 	      	setTimeout(function () {
 		    $(".loader-page").css({visibility:"visible",opacity:"1"})
@@ -154,7 +154,6 @@ $(document).ready(function(){
 	mobilmenu.on("touchstart", function(e){
 		$('.top_menu').find('.iconos-menu-mobile').toggleClass('active-imb');
 		console.log('click creado para abrir nuevo menu');
-		/*loadSpiner();*/
 	});
 
 	$('.icon-menu-login').on("touchstart", function(e){
@@ -176,8 +175,7 @@ $(document).ready(function(){
       $('#new_account_form').slideDown('slow');
     });
 
-
-    /* ESta sección se quedará oculta ---*/
+    /* Esta sección se quedará oculta ---*/
 
  /*==================== SECTION REGISTER - FORM =======================*/
  	//FUNCTION UTILIZED ON CUSTOMER_ACCOUNT_FORM.TPL DELUXES
