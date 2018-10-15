@@ -27,37 +27,65 @@ $(document).ready(function(){
     	},3000);
      });
 
-     $('.shopping_cart').one("touchstart", setTimeout(openLoader,300));
-     $('#button_order_cart').on("click", openLoader);
-
      function openLoader(e){
 		$(".loader-page").css({visibility:"visibe",opacity:"100"});
+		console.log("Estoy abriendo loader");
+     }
+     function closeLoader(e){
+		$(".loader-page").css({visibility:"hidden",opacity:"0"});
+		console.log("Estoy cerrando loader");
      }
 
      /*==================== SPINNER ELEMENT LINK A  =======================*/
-     $('a').on('touchstart', function loadSpiner(event) {
+     $('a').on('click tap', function loadSpiner(event) {
+     	/*-------- Depurando variables --------------*/
      	var aL = event.currentTarget;
+     	var alName = aL.localName;
+     	var aParentClass = aL.offsetParent.children[0].lastChild.className;
      	var aLink = aL.href;
+     	var aLinksplit = aLink.split(":")[0];
      	var aBaseUri = aL.baseURI;
      	var BaseUriD = aBaseUri + "#";
+     	
+     	console.log("OffSetParent: " + alName);	
 
-     	//console.log("Elemento href: " + aLink);
-     	//console.log("BaseUri: " + aBaseUri);
-		//console.log("verificando elemento ejecutor: " + aL.localName);  
-		//console.log("BaseUriD: " + BaseUriD);
-		//console.log(event);
+     	console.log("Elemento href: " + aLink);
+     	console.log("aBaseUri: " + aBaseUri);
+     	console.log("location.href: " + location.href);
+     	console.log("Split element: " + aLinksplit);
+     	console.log(aParentClass);
+     	console.log(event);
 
-		  if((aL.localName = "a") && (aLink != aBaseUri) && (aLink != null) && (aLink != "javascript:;") && 
-		  	(aLink != BaseUriD) && (aL.classList[0] != "add_to_compare")){
-	      	setTimeout(function () {
-		    $(".loader-page").css({visibility:"visible",opacity:"1"})
-		  }, 300);
+  		/*--------- REcorriendo URL SPLIT - comprobando query ----------*/
+		if(aLink.indexOf('?') != -1){
+			aLinksplit = aLink.split("?")[1].split("=")[0];
+			console.log("Delete link:" + aLinksplit);
+			console.log("Simbolo de: ?");
+		}
+
+		/*--------Recorriendo URL SPLIT - comprobar si contiene pagination --------*/
+		var aLinksplit2 = aLink.split("/");
+		var abSplit = aLinksplit2.length - 1;
+		var aLinksplit2b = aLinksplit2[abSplit].split("-")[0];
+		//console.log(aLinksplit2);
+		console.log(aLinksplit2b);
+
+		/*-------- Condiciones para aplicar spinner loader -------------*/
+		  if((aL.localName = "a") && (aLinksplit !="delete" || aLinksplit != "add") && (aParentClass != "shopping_cart") && (aLinksplit == "http" || aLinksplit == "https") && ("remove_link") && (aLink != aBaseUri) && (aLink !== null) && (aLink != "javascript:;") && (aLink != BaseUriD) && (aL.classList[0] !== "add_to_compare") && (aL.offsetParent.localName !== "h4")){
+	      		//openLoader();
 	      	console.log("Spinner a mostrar");
+	      	if((aLinksplit2b == "page")){
+	      		setTimeout(function () {closeLoader() }, 800);
+	      		console.log("spinner loader out 2");
+     		}else{}
 	      }else{
 	      	console.log("No se puede mostrar spinner");
 	      }
 		  console.log("Spinner in/out");
 		});
+
+        // $('.shopping_cart').find('a').on("click tap", setTimeout(closeLoader(),300));
+     	//$('#button_order_cart').on("click tap", setTimeout(openLoader(),900));
 
      /*==================== SIZE CHART  =======================*/
 
