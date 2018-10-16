@@ -2604,4 +2604,122 @@ i.icon-heart::before {
     font-family: "FontAwesome";
 }
 
+/*Azai Wholesale V1.1*/
+.slidewhrwsl {
+    height:100vh;
+    position: relative;
+}
+.slidewh {
+    position:absolute;
+    height:100%;
+    width:100%;
+}
+.slidewhrwsl .slidewh:target {
+    z-index: 100;
+}
+img.imagendefondo {
+    max-width: 100%;
+    width: 100%;
+    position: fixed;
+    left: 0;
+}
+
+a.botonsl.botonsl-warning {
+    position: absolute;
+    top: 450px;
+    left: 360px;
+    color: white;
+    font-weight: bold
+}
+.botonsl-default {
+    color: #333;
+    background-color: #fff;
+    position: absolute;
+    top: 410px;
+    left: 310px;
+    text-decoration:none; 
+}
+.botonsl {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    
+}
+a.textominimun {
+    position: absolute;
+    top: 636px;
+    left: 306px;
+    font-weight: bold
+}
+
+   @media only screen  and (max-width : 1025px){
+   .Wholesaledesktop {
+    display: none;
+   }
+   .Wholesalemobile {
+    display: inline-block;
+    max-width: 100%;
+    width: 100%;
+    /*position: fixed;*/
+    left: 0;
+    top: -10px;
+   }
+   .botonsl-default {
+    color: #333;
+    background-color: #fff;
+    position: absolute;
+    top: 62%;
+    left: 100px;
+    text-decoration: none;
+    /*height: 33px;*/
+    /*width: 320px;*/
+    /*font-size: 30px;*/
+}
+   a.botonsl.botonsl-warning {
+    position: absolute;
+    top: 66%;
+    left: 410px;
+    color: white;
+    font-weight: bold;
+    font-size: 35px;
+   }
+   a.textominimun {
+    position: absolute;
+    top: 590px;
+    left: 90px;
+    font-weight: bold;
+    /* font-size: 62px; */
+    color: black;
+}
+   }  
+   @media only screen and (min-width : 1025px){
+   .Wholesalemobile {
+    display: none;
+   }
+   .Wholesaledesktop {
+    display: inline-block;
+    max-width: 100%;
+    width: 100%;
+   /* position: fixed;*/
+    left: 0;
+   }
+   
+   
+   }
  
