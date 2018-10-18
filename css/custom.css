@@ -2411,9 +2411,9 @@ div#advansedwishlist_block {
     position: relative;
 }
 .slidewh {
-    position:absolute;
-    height:100%;
-    width:100%;
+    /* position:absolute; */
+    /* height:100%; */
+    /* width:100%; */
 }
 .slidewhrwsl .slidewh:target {
     z-index: 100;
@@ -2495,10 +2495,10 @@ a.textominimun {
    a.botonsl.botonsl-warning {
     position: absolute;
     top: 66%;
-    left: 410px;
+    left: 150px;
     color: white;
     font-weight: bold;
-    font-size: 35px;
+    /* font-size: 35px; */
    }
    a.textominimun {
     position: absolute;
