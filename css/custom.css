@@ -2494,6 +2494,7 @@ div#advansedwishlist_block {
     padding: 20px 8px 0px 0px;
     height: auto;
     width: 100%;
+    display: none;
 }
 
 /**** Sale******/
