@@ -1701,7 +1701,7 @@ ul.product_list.list > li h5 .product-name:hover{color: #000;}
 /** fin cambios Marius **/
 /** One Page Paiement opc **/
 .page-heading span.heading-counter{display: none;font-weight: 300;}
-.opc-title h1{text-align: center;color:black;font: 700 35px/50px Helvetica, sans-serif;margin-top: 10px;margin-bottom: 20px;}
+.opc-title h1{text-align: center;color:black;font: 700 35px/50px Helvetica, sans-serif;margin-top: 35px;margin-bottom: 20px;}
 #new_account_form .box .top-indent{padding-top: 40px;}
 ul#address_invoice{background: #F1F1F1;}
 #address_invoice_form .btn-default{color: #fff; background: black;}
