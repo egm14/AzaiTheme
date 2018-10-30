@@ -894,7 +894,7 @@ button.btn.btn-secondary.btn-sm{
     
 }   
 
-
+#productscategory_list ul li.product-box .functional-buttons, #crossselling_list ul li.product-box .functional-buttons, .related-block ul li.product-box .functional-buttons, .accessories-block ul li.product-box .functional-buttons {display: none;}
 /***************************************************************
  ******************* Screen Min-width 1366px *********************
  ***************************************************************/
@@ -1133,7 +1133,54 @@ button.btn.btn-secondary.btn-sm{
     ul.product_list .functional-buttons > div a#wishlist_button i::before{
         margin-right:0px;
     }
-    
+    input.form-control {
+    border: solid 1px #ebebeb;
+    border: 1px transparent solid;
+    background-clip: padding-box;
+    border-radius: 5px;
+    display: block;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.92857em 0.78571em;
+    word-break: normal;
+}
+.form-control {
+    height: 40px;
+    padding: 4px 30px;
+}
+#opc_new_account .form-group .form-control {
+    max-width: 100%;
+    background-color: white;
+    color: #333333;
+    border-color: #d9d9d9;
+}
+#opc_new_account div.selector {
+    width: 100% !important;
+}
+#identity #center_column form.std .row .col-xs-4, #authentication #center_column form.std .row .col-xs-4, #order-opc #center_column form.std .row .col-xs-4 {
+    padding-left: 5px;
+    padding-right: 5px;
+    max-width: 100%;
+}
+/*Display Title*/
+.required.clearfix.gender-line {
+    display: none;
+}
+p.required.opc-required.pull-right {
+    left: -106px;
+    position: relative;
+    top: 10px;
+}
+#carrier_area td {
+    width: 55%;
+}
+a.sizes-chart {
+    padding: 0px 10px!important
+}
+input {
+    height: 100%;
+}
 }
 
 
@@ -2600,7 +2647,3 @@ i.icon-heart::before {
     content: "\f004";
     font-family: "FontAwesome";
 }
-/*Null Requered label checkout*/
-p.required.opc-required.pull-right {
-    display: none;
-} 
