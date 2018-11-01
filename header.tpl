@@ -4,16 +4,9 @@
 <!--[if IE 8]><html class="no-js lt-ie9 ie8"{if isset($language_code) && $language_code} lang="{$language_code|escape:'html':'UTF-8'}"{/if}><![endif]-->
 <!--[if gt IE 8]> <html class="no-js ie9"{if isset($language_code) && $language_code} lang="{$language_code|escape:'html':'UTF-8'}"{/if}><![endif]-->
 <html{if isset($language_code) && $language_code} lang="{$language_code|escape:'html':'UTF-8'}"{/if}>
+
 <head>
-  {literal}
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PBFFQKC');</script>
-    <!-- End Google Tag Manager -->
-  {/literal}
+
     <meta charset="utf-8" />
     <title>{$meta_title|escape:'html':'UTF-8'}</title>
   
@@ -31,9 +24,17 @@
     <link rel="icon" type="image/vnd.microsoft.icon" href="{$favicon_url}?{$img_update_time}" />
     <link rel="shortcut icon" type="image/x-icon" href="{$favicon_url}?{$img_update_time}" />
 
+    <!--<link href="https://fonts.googleapis.com/css?family=Allura|Great+Vibes|Permanent+Marker|Petit+Formal+Script|Pinyon+Script" rel="stylesheet">-->
 
-<link href="https://fonts.googleapis.com/css?family=Allura|Great+Vibes|Permanent+Marker|Petit+Formal+Script|Pinyon+Script" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="http{if Tools::usingSecureMode()}s{/if}://fonts.googleapis.com/css?family=Exo+2:400,300,700%7CArimo:400,700&subset=latin,cyrillic" type="text/css" media="all" /> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script>
+      WebFont.load({
+        google: {
+          families: ['Allura|Great+Vibes|Permanent+Marker|Petit+Formal+Script|Pinyon+Script', 'Allura|Great+Vibes|Permanent+Marker|Petit+Formal+Script|Pinyon+Script']
+        }
+      });
+    </script>
+
     {if isset($css_files)}
       {foreach from=$css_files key=css_uri item=media}
         {if $css_uri == 'lteIE9'}
@@ -73,14 +74,8 @@
    {/if}
 
   </head>
-
   <body{if isset($page_name)} id="{$page_name|escape:'html':'UTF-8'}"{/if} class="{if isset($page_name)}{$page_name|escape:'html':'UTF-8'}{/if}{if isset($body_classes) && $body_classes|@count} {implode value=$body_classes separator=' '}{/if}{if $hide_left_column} hide-left-column{else} show-left-column{/if}{if $hide_right_column} hide-right-column{else} show-right-column{/if}{if isset($content_only) && $content_only} content_only{/if} lang_{$lang_iso} {if !$content_only}{if $columns == 2} two-columns{elseif $columns == 3} three-columns{else} one-column{/if}{/if}">
-    {literal}
-      <!-- Google Tag Manager (noscript) -->
-        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PBFFQKC"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-      <!-- End Google Tag Manager (noscript) -->
-  {/literal}
+ 
   {if !isset($content_only) || !$content_only}
   <!--[if IE]>
     <div class="old-ie">
@@ -106,7 +101,7 @@
       <div class="header-container">
         <header id="header">
         
-									<div id="ship" style="display:none;">Free Shipping on Order Over $90</div>
+                  <div id="ship" style="display:none;">{l s='Free Shipping on Order Over $50'}</div>
         
           {capture name='displayBanner'}{hook h='displayBanner'}{/capture}
           {if $smarty.capture.displayBanner}
@@ -161,23 +156,23 @@
           {/if}
           <div id="slider_row">
             <div id="top_column" class="center_column">
-                <!-- Codigo original -->
-                    <!-- {*{assign var='displayMegaTopColumn' value={hook h='tmMegaLayoutTopColumn'}}
+                {assign var='displayMegaTopColumn' value={hook h='tmMegaLayoutTopColumn'}}
               {if $displayMegaTopColumn}
                 {hook h='tmMegaLayoutTopColumn'}
               {elseif $page_name == 'index'}
                 <div class="container">
                   {capture name='displayTopColumn'}{hook h='displayTopColumn'}{/capture}
                   {if $smarty.capture.displayTopColumn}
-                    {$smarty.capture.displayTopColumn} fin del codigo original*}-->
-              {assign var='sliderrevolucion' value={hook h='sliderrevolucion'}}
+                    {$smarty.capture.displayTopColumn} 
+              <!-- Codigo original -->
+                    <!-- {*{assign var='sliderrevolucion' value={hook h='sliderrevolucion'}}
               {if $sliderrevolucion}
                 {hook h='sliderrevolucion'}
               {elseif $page_name == 'index'}
                 <div class="container">
                   {capture name='sliderrevolucion'}{hook h='sliderrevolucion'}{/capture}
                   {if $smarty.capture.sliderrevolucion}
-                    {$smarty.capture.sliderrevolucion}
+                    {$smarty.capture.sliderrevolucion}fin del codigo original*}-->
                   {/if}
                 </div>
               {/if}
