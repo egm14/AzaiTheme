@@ -2647,3 +2647,42 @@ i.icon-heart::before {
     content: "\f004";
     font-family: "FontAwesome";
 }
+
+/*modulo categoria en home*/
+ul#homecategoriez {
+    column-count: 2;
+    column-gap: 0px;
+}
+ul#homecategoriez a img {
+    object-fit: cover;
+    object-position: right;
+    min-height: 100px;
+    width: auto;
+    shape-margin: unset;
+    shape-outside: content-box;
+}
+ul#homecategoriez .right-blok {
+    width: auto;
+    clear: both;
+    float: none;
+    position: fixed;
+    top: 30px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f0f8ff05;
+}
+
+ul.product_list.grid > li .product-container .right-block {
+    padding: 51px 15px 35px;
+    top: -60px;
+    background: #0000006e;
+    margin: -41px 1px -20px -1px;
+}
+
+ul.product_list.grid > li .product-container h5 a.product-name {
+    font-family: Helvetica, sans-serif;
+    color: #ffffff;
+    font-size: 13px;
+    line-height: 15px;
+}
