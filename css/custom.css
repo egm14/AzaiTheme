@@ -131,6 +131,25 @@ button.btn-md.btn.btn-default.icon-right {border: solid 1px #aaaaaa;}
  ******************* General CSS Changel  *********************
  ***************************************************************/
 
+/*Scroll left top - banner Text */
+#ship{width:100%!important;height:25px;background:black;color:white;display:block!important;text-transform:uppercase;font-size:0.8em;margin-bottom: 4px; margin: 0px 0px 0px 0px;text-align:center;}
+#ship div.ship-text{
+    width:100%;
+    height:25px;
+    position:absolute;
+    top:0;
+    left:0;
+    margin-bottom:0px;
+    overflow:hidden;
+    animation: TextScroll 20s linear infinite;
+    -webkit-animation: TextScroll 20s linear infinite;
+    -moz-animation: TextScroll 20s linear infinite;
+}
+
+@keyframes TextScroll{
+    from{left:100%;}
+    to{left:-100%;}
+}
 /*---------Product Page Change ---------------*/
 .pb-right-column h1{
     font-family: 'Didot-Italic', cursive!important;
@@ -216,7 +235,7 @@ ul.menu.clearfix.top-level-menu.tmmegamenu_item.sf-js-enabled.sf-arrows {
 #opc_new_account .box{
     -webkit-box-shadow:2px 7px 21px 3px rgba(0, 0, 0, 0.09);
             box-shadow:2px 7px 21px 3px rgba(0, 0, 0, 0.09);
-            border: solid #7d7b7d54 1px;
+    border: solid #7d7b7d54 1px;
 }
 #opc_new_account .box:hover{
     cursor:pointer;
@@ -1021,7 +1040,6 @@ button.btn.btn-secondary.btn-sm{
     #header > .wrapper .module > div + div{margin-left: 38px;}
     #header .icon-links{padding-top: 0px;}
     .shopping_cart > a:first-child .ajax_cart_quantity{top: 30%;}
-    #ship{width:100%!important;background:black;color:white;display:block!important;text-transform:uppercase;font-size:0.8em;margin-bottom: 4px;}
     #header > .wrapper{padding-top:10px;padding-bottom:0px;}
     .it_MZSZZYAUBYFL .module{padding-top: 4px;}
     .account_creation div label{display: block;height: 30px;}
@@ -2150,7 +2168,7 @@ div.btn_action.btn-list{text-align: center;}
 @media only screen and (max-width: 640px){
 .mobil{display:block;}
 .desk{display:none;}pa
-#ship{width:100%!important;background:black;color:white;display:block!important;text-transform:uppercase;font-size:0.8em;margin-bottom: 4px; margin: 0px 0px 0px 0px;}
+
 #header > .wrapper .module{line-height: 1px; margin-top:2.7px;}
 #header .row #header_logo {margin-bottom: 0px!important; margin-left: 8px;}
 #header > .wrapper {padding-top: 5px!important;padding-bottom: 0px!important;padding-right: 0px!important;}
@@ -2647,8 +2665,10 @@ i.icon-heart::before {
     content: "\f004";
     font-family: "FontAwesome";
 }
-
-/*modulo categoria en home*/
+/*Null Requered label checkout*/
+p.required.opc-required.pull-right {
+    display: none;
+}  
 ul#homecategoriez {
     column-count: 2;
     column-gap: 0px;
@@ -2673,16 +2693,17 @@ ul#homecategoriez .right-blok {
     background-color: #f0f8ff05;
 }
 
-ul.product_list.grid > li .product-container .right-block {
+/*ul.product_list.grid > li .product-container .right-block {
     padding: 51px 15px 35px;
     top: -60px;
     background: #0000006e;
     margin: -41px 1px -20px -1px;
-}
+}*/
 
 ul.product_list.grid > li .product-container h5 a.product-name {
     font-family: Helvetica, sans-serif;
-    color: #ffffff;
+   /* color: #ffffff;*/
     font-size: 13px;
     line-height: 15px;
 }
+ 
