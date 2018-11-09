@@ -52,7 +52,7 @@ a:hover{color: black;}
 body .fancybox-wrap .fancybox-skin .fancybox-close:hover{color: black;}
 .fancybox-nav{top: 30px;height: 90%;width: 10%;}
 #header > .wrapper{padding-top: 2px;padding-bottom: 2px;}
-#header .icon-links{padding-top: 47px;}
+#header .icon-links{padding-top: 35px;}
 @media only screen and (min-width: 1300px){
     #header_logo .img-responsive{max-width: 161px;height: 86px;}
     .top_menu li li a, .top_menu .stickUpHolder li li a{padding: 4px 10px 4px 10px;}
@@ -131,6 +131,15 @@ button.btn-md.btn.btn-default.icon-right {border: solid 1px #aaaaaa;}
  ******************* General CSS Changel  *********************
  ***************************************************************/
 
+/*Cart price - Shipping Price */
+.cart_block .cart_block_list > .cart-prices{
+    display:none;
+}
+#header-login div.current a.login:before{display:none;content:"";}
+#header > .wrapper .module{vertical-align: baseline;}
+
+/*Header login - sow */
+ #header-login div.current a.dropdown.login span{display:inline-block!important;text-decoration:underline;}
 /*Scroll left top - banner Text */
 #ship{width:100%!important;height:25px;background:black;color:white;display:block!important;text-transform:uppercase;font-size:0.8em;margin-bottom: 4px; margin: 0px 0px 0px 0px;text-align:center;}
 #ship div.ship-text{
@@ -141,9 +150,9 @@ button.btn-md.btn.btn-default.icon-right {border: solid 1px #aaaaaa;}
     left:0;
     margin-bottom:0px;
     overflow:hidden;
-    animation: TextScroll 20s linear infinite;
-    -webkit-animation: TextScroll 20s linear infinite;
-    -moz-animation: TextScroll 20s linear infinite;
+    animation: TextScroll 30s linear infinite;
+    -webkit-animation: TextScroll 30s linear infinite;
+    -moz-animation: TextScroll 30s linear infinite;
 }
 
 @keyframes TextScroll{
@@ -176,9 +185,9 @@ ul.product_list .color-list-container ul li {
     border: solid #d9d9d6 1px !important;
 }
 /*Cambio en tamano del width del menu */
-ul.menu.clearfix.top-level-menu.tmmegamenu_item.sf-js-enabled.sf-arrows {
+/*ul.menu.clearfix.top-level-menu.tmmegamenu_item.sf-js-enabled.sf-arrows {
     width: 607px!important;
-}
+}*/
 
 /*Product Reference*/
 .product-info-line #product_reference{
@@ -935,6 +944,9 @@ button.btn.btn-secondary.btn-sm{
 
     .top_menu ul li.top-level-menu-li{margin-left:17px!important;}
     .top_menu ul li:nth-child(first){margin-left:0px;}
+    #header .header-absolute{top:25px;}
+    #header > .wrapper [class*='col-']{line-height:0!important;}
+    #header .icon-links #header-login{margin-right:25px!important;}
 
 
 
@@ -952,7 +964,7 @@ button.btn.btn-secondary.btn-sm{
     /*------------Modificando estructura del geader--------------*/
     #header div.stick-up .col-xs-8.col-lg-5{width:50%!important;}
     #header div.stick-up .col-xs-12.col-lg-3{width:16.66667%!important;}
-    #header div.stick-up .module #header-login{padding-top:47px;left:205px;}
+   /* #header div.stick-up .module #header-login{padding-top:47px;left:205px;}*/
     #header div.stick-up  .icon-links .shopping_cart{margin-left:15px!important;}
     
   .top_menu ul li a[href="https://dev.azai.com/16-purses-bags"]{display:none;}
@@ -1080,7 +1092,12 @@ button.btn.btn-secondary.btn-sm{
  ***************************************************************/
 
 @media only screen and (max-width:767px){
-
+    /*IPAD top banner sticker*/
+    #ship div.ship-text{
+    animation: TextScroll 20s linear infinite;
+    -webkit-animation: TextScroll 20s linear infinite;
+    -moz-animation: TextScroll 20s linear infinite;
+}
     /*-------------Footer ---------------*/
   footer#footer .container .row .col-xs-12{
     border-bottom:1px solid #cccccc;
@@ -1199,6 +1216,9 @@ a.sizes-chart {
 input {
     height: 100%;
 }
+ul.menu-myaccount.header-login-content.toogle_content {
+    display: block!important;
+}
 }
 
 
@@ -1282,6 +1302,11 @@ input {
      }
      #add_to_cart_product_page_button .btn{
         padding: 20px 66px; margin-bottom:10px; width:100%;
+    }
+    /*------------- Header -------------------*/
+    #header .container.header-absolute .stick-up.align-center{
+        background-color:white;
+        margin-top:-4px;
     }
  }
 
@@ -1759,7 +1784,7 @@ ul.step li.step_current span:after{background: #000000;border-top: 1px solid #00
 /*#cart_summary tfoot td#total_price_container{border-top: 2px solid rgb(177, 177, 177);}*/
 .page-product-box{margin-top:50px;}
 #product.content_only div.primary_block div.pb-right-column .box-info-product .content_prices #our_price_display{font: 400 20px/30px Helvetica, sans-serif;color: #2f2c2f;}
-#order .delivery_option > div > table.resume td.delivery_option_logo, #order-opc .delivery_option > div > table.resume td.delivery_option_logo{display:none;}
+/*#order .delivery_option > div > table.resume td.delivery_option_logo, #order-opc .delivery_option > div > table.resume td.delivery_option_logo{display:none;}*/
 #crossselling_list .bx-wrapper .bx-controls-direction a:hover:before, .accessories-block .block_content .bx-wrapper .bx-controls-direction a:hover:before, #productscategory_list .bx-wrapper .bx-controls-direction a:hover:before, #blockcart_list .bx-wrapper .bx-controls-direction a:hover:before, .related-block .bx-wrapper .bx-controls-direction a:hover:before{color: black;}
 ul.product_list.list > li h5 .product-name{font: 400 20px/32px Helvetica, sans-serif;}
 ul.product_list.list > li h5 .product-name:hover{color: #000;}
@@ -1798,7 +1823,7 @@ h1.page-heading.step-num{font-size: 25px;background: #f5f5f5;text-align: left;}
     
 }
 #index .header-absolute {background: rgba(255, 255, 255, 0.64)!important;}
-#header .row{padding:1px 0px;}
+#header .row{padding:0px 0px;}
 
 .top_menu .is-megamenu, .top_menu .stickUpHolder .is-megamenu {
     top: 106%!important;
@@ -2172,7 +2197,7 @@ div.btn_action.btn-list{text-align: center;}
 #header > .wrapper .module{line-height: 1px; margin-top:2.7px;}
 #header .row #header_logo {margin-bottom: 0px!important; margin-left: 8px;}
 #header > .wrapper {padding-top: 5px!important;padding-bottom: 0px!important;padding-right: 0px!important;}
-.it_MZSZZYAUBYFL{padding-left: 0px;padding-right: 10px;height: 39px;}
+.it_MZSZZYAUBYFL{padding-left: 0px;padding-right: 10px;height: 39px;margin-top:10px;}
 .it_MZSZZYAUBYFL .module{padding-top: 14px;}
 .it_BSUTAHJUZRYU{display:none!important;}
 #header > .wrapper .module > div + div{margin-left: 24px;}
@@ -2353,13 +2378,16 @@ img.fancybox-inner {
 /* caracteristicas del voucher agregadas */
 .cart_voucher #voucher {
     padding: 0px 0px 4px 10px;
-    background: #000000bd;
+    background: #000000;
     margin: 5px -10px 5px 0px;
 }
 /* Color del boton ok voucher  */
 button.btn.btn-secondary.btn-sm {
-    color: white!important;
+    background-color:white!important;
+    color: black!important;
     top: -5px;
+    min-width:70px;
+    margin-top:5px;
 }
 /*Cambios en el menu version movil*/
 @media only screen and (max-width: 640px){
@@ -2706,4 +2734,19 @@ ul.product_list.grid > li .product-container h5 a.product-name {
     font-size: 13px;
     line-height: 15px;
 }
- 
+@media (max-width: 479px){
+ul.product_list.grid > li .product-container .old-price {
+    display: block!important;
+}}
+div#show-orden {
+    background: black;
+    color: snow;
+    padding: 12px;
+}
+a#total_price_without_tax {
+    color: #ffffff;
+    text-decoration: underline;
+    right: 5%;
+    position: absolute;
+}
+
