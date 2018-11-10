@@ -10,13 +10,13 @@
   <p class="alert alert-warning">{l s='Your new order was not accepted.'}</p>
 {else}
   {if $productNumber}
-    
-    <!-- Shopping Cart -->
-    <div class="opc-cart">
-    {include file="$tpl_dir./shopping-cart.tpl"}
+   
+<!-- Resumen Orden -->
+    <div>
+    {include file="$tpl_dir./resumen-orden.tpl"}
     </div>
-    <!-- End Shopping Cart -->
-    <div class="opc-title"><h1>{l s='Proceed to checkout'}</h1></div>
+<!-- Resumen Orden -->  
+        <div class="opc-title"><h1>{l s='Proceed to checkout'}</h1></div>
     <div class="opc-address">
     {if $is_logged && !$is_guest}
       {include file="$tpl_dir./order-address.tpl"}
@@ -26,14 +26,18 @@
       <!-- END Create account / Guest account / Login block -->
     {/if}
     </div>
+    <!-- Shopping Cart -->
+    <div class="opc-cart">
+    {include file="$tpl_dir./shopping-cart.tpl"}
+    </div>
+    <!-- End Shopping Cart -->
     <!-- Carrier -->
     <div class="opc-carrier">
     {include file="$tpl_dir./order-carrier.tpl"}
     </div>
     <!-- END Carrier -->
-
-    <!-- Payment -->
     
+    <!-- Payment -->
     <div class="opc-payment">
     {include file="$tpl_dir./order-payment.tpl"}
     </div>

@@ -31,9 +31,17 @@
     <link rel="icon" type="image/vnd.microsoft.icon" href="{$favicon_url}?{$img_update_time}" />
     <link rel="shortcut icon" type="image/x-icon" href="{$favicon_url}?{$img_update_time}" />
 
+     <!--<link href="https://fonts.googleapis.com/css?family=Allura|Great+Vibes|Permanent+Marker|Petit+Formal+Script|Pinyon+Script" rel="stylesheet">-->
 
-<link href="https://fonts.googleapis.com/css?family=Allura|Great+Vibes|Permanent+Marker|Petit+Formal+Script|Pinyon+Script" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="http{if Tools::usingSecureMode()}s{/if}://fonts.googleapis.com/css?family=Exo+2:400,300,700%7CArimo:400,700&subset=latin,cyrillic" type="text/css" media="all" /> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script>
+      WebFont.load({
+        google: {
+          families: ['Allura|Great+Vibes|Permanent+Marker|Petit+Formal+Script|Pinyon+Script', '']
+        }
+      });
+    </script>
+
     {if isset($css_files)}
       {foreach from=$css_files key=css_uri item=media}
         {if $css_uri == 'lteIE9'}
@@ -47,7 +55,7 @@
 
         {/if}
       {/foreach}
-        <link href="{$css_dir}custom.css" rel="stylesheet" type="text/css" media="screen" />
+        <link rel="stylesheet" href="{$css_dir}custom.css"  type="text/css" media="screen" />
 
     {/if}
 
@@ -106,7 +114,9 @@
       <div class="header-container">
         <header id="header">
         
-									<div id="ship" style="display:none;">Free Shipping on Order Over $90</div>
+                  <!--<div id="ship" style="display:none;">Free Shipping on Order Over $90</div>-->
+                  <div id="ship"><div class="ship-text">{l s='Free Shipping Over $90 USA , Over $150 Mex (48 HRS)'}</div></div>
+
         
           {capture name='displayBanner'}{hook h='displayBanner'}{/capture}
           {if $smarty.capture.displayBanner}
@@ -161,23 +171,23 @@
           {/if}
           <div id="slider_row">
             <div id="top_column" class="center_column">
-                <!-- Codigo original -->
-                    <!-- {*{assign var='displayMegaTopColumn' value={hook h='tmMegaLayoutTopColumn'}}
+                {assign var='displayMegaTopColumn' value={hook h='tmMegaLayoutTopColumn'}}
               {if $displayMegaTopColumn}
                 {hook h='tmMegaLayoutTopColumn'}
               {elseif $page_name == 'index'}
                 <div class="container">
                   {capture name='displayTopColumn'}{hook h='displayTopColumn'}{/capture}
                   {if $smarty.capture.displayTopColumn}
-                    {$smarty.capture.displayTopColumn} fin del codigo original*}-->
-              {assign var='sliderrevolucion' value={hook h='sliderrevolucion'}}
+                    {$smarty.capture.displayTopColumn} 
+              <!-- Codigo original -->
+                    <!-- {*{assign var='sliderrevolucion' value={hook h='sliderrevolucion'}}
               {if $sliderrevolucion}
                 {hook h='sliderrevolucion'}
               {elseif $page_name == 'index'}
                 <div class="container">
                   {capture name='sliderrevolucion'}{hook h='sliderrevolucion'}{/capture}
                   {if $smarty.capture.sliderrevolucion}
-                    {$smarty.capture.sliderrevolucion}
+                    {$smarty.capture.sliderrevolucion}fin del codigo original*}-->
                   {/if}
                 </div>
               {/if}

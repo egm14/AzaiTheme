@@ -58,7 +58,8 @@
               </button>
             </p>-->
           </div>
-
+      </div>
+          <div id="opc_account_choice" class="row">
           <!-- INSTANT CHECKOUT -->
           <div id="opc_guestCheckout" class="col-xs-12 col-md-6 box"><!--e_instant_checkout -->
             <h3 id="new_account_title" class="page-subheading">
@@ -72,8 +73,9 @@
               </button>
             </p>-->
           </div>
+       </div>
           
-        </div>
+       
 
         <div id="opc_account_form" class="unvisible">
           {$HOOK_CREATE_ACCOUNT_TOP}
