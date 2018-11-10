@@ -90,10 +90,10 @@
     </div>
   <![endif]-->
     <!-- Loader page -->
-    <div class="loader-page">
+   <!-- <div class="loader-page"> 
       <!--spinner 1<div class="lds-ripple"><div></div><div></div></div>-->
-      <!--spinner 2--><div class="spinner2"><div class="dot1"></div><div class="dot2"></div>
-  </div>
+     <!-- spinner 2<div class="spinner2"><div class="dot1"></div><div class="dot2"></div>
+  </div> -->
     </div>
     <!-- End loader page -->
 
