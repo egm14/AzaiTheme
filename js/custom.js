@@ -33,76 +33,82 @@ $(document).ready(function(){
 
      /*==================== SPINNER ELEMENT LINK A TO MOBILE  =======================*/
 
-if(window.innerWidth < 768) {
 
-     //Hammer library for mobile
-		var aElem = document.getElementsByTagName('a');
-		//console.log("esto es aElement: " + aElem);
-
-	//if(aElemn < 0){
-		//var mc2 = new Hammer(aElem[0]);
-     	//console.log("Esto es mc2: " + mc2);
-
-     	//aElem.on("tap", function(event){
+		var aElem = $('body');
+		
      	Hammer(aElem[0]).on("tap", function(event){
-     		console.log("Se ha hecho: "+ ev.type);
-     	/*-------- Depurando variables --------------*/
-     	var aL = event.currentTarget;
-     	var alName = event.handleObj.selector;
-     	var aParentClass = aL.parentNode.className;
-     	var aLink = aL.href;
-     	var aLinksplit = aLink.split(":")[0];
-     	var aBaseUri = aL.baseURI;
-     	var BaseUriD = aBaseUri + "#";
+     		var aL = event.target;
+     		//console.log("Se ha hecho: "+ event.type);
+     		//console.log(aL.localName);
+     		//console.log("padre : "+ aL.offsetParent.localName);
+     		console.log(event);
+
+     		if((aL.localName == "a") || (aL.offsetParent.localName == "a")){
+     			console.log("es un elemnto aA -AAAAAA");
+     		 
+     		 /*-------- Depurando variables --------------*/
      	
-     	console.log("Selector " + alName);	
+		     	//var alName = event.handleObj.selector || "undefine";
+		     	var aParentClass = aL.parentNode.className;	
+		     	var aBaseUri = aL.baseURI;
+		     	var BaseUriD = aBaseUri + "#";
 
-     	console.log("Elemento href: " + aLink);
-     	console.log("data-image: " + aL.dataset.zoomId)
-     	console.log("aBaseUri: " + aBaseUri);
-     	console.log("location.href: " + location.href);
-     	console.log("Split element: " + aLinksplit);
-     	console.log(aParentClass);
-     	console.log(event);
+		     	if(aL.href){
+		     		var aLink = aL.href;
+		     		console.log("Elemento href: " + aLink);
+		     		var aLinksplit = aLink.split(":")[0];
+		     		/*--------- REcorriendo URL SPLIT - comprobando query ----------*/
+		     		if(aLink.indexOf('?') != -1){
+					aLinksplit = aLink.split("?")[1].split("=")[0];
+					console.log("Delete link:" + aLinksplit);
+					//console.log("Simbolo de: ?");
+					}
 
-  		/*--------- REcorriendo URL SPLIT - comprobando query ----------*/
-		if(aLink.indexOf('?') != -1){
-			aLinksplit = aLink.split("?")[1].split("=")[0];
-			console.log("Delete link:" + aLinksplit);
-			console.log("Simbolo de: ?");
-		}
+					/*--------Recorriendo URL SPLIT - comprobar si contiene pagination --------*/
+				var aLinksplit2 = aLink.split("/");
+				var abSplit = aLinksplit2.length - 1;
+				var aLinksplit2b = aLinksplit2[abSplit].split("-")[0];
+				//console.log(aLinksplit2);
+				console.log(aLinksplit2b);
+		     }
+		     	
+		     	//console.log("Selector " + alName);	
+		     	//console.log("data-image: " + aL.dataset.zoomId);
+		     	//console.log("aBaseUri: " + aBaseUri);
+		     	//console.log("location.href: " + location.href);
+		     	//console.log("Split element: " + aLinksplit);
+		     	console.log(aParentClass);
+		     	//console.log(event);
 
-		/*--------Recorriendo URL SPLIT - comprobar si contiene pagination --------*/
-		var aLinksplit2 = aLink.split("/");
-		var abSplit = aLinksplit2.length - 1;
-		var aLinksplit2b = aLinksplit2[abSplit].split("-")[0];
-		//console.log(aLinksplit2);
-		console.log(aLinksplit2b);
+		     	if(aL.parentElement.localName == "a"){
+		     		if(aL.parentElement.href.split(".")[1] == "html"){
+		     		setTimeout(function () {openLoader() }, 300);
+			      			console.log("Spinner a mostrar padre.");
+		     	}else{
+		     		console.log("No se puede mostrar Spinner padre.");
+		     	}
+		     }
 
-		/*-------- Condiciones para aplicar spinner loader -------------*/
-		if((aL.localName = "a") && (aLinksplit == "http" || aLinksplit == "https")){
-		  	if((aLinksplit !="delete" || aLinksplit != "add") && (aL.dataset.zoomId != "MagicZoomPlusImageMainImage") && (aParentClass != "shopping_cart") && ("remove_link") && (aLink != aBaseUri) && (aLink !== null) && (aLink != "javascript:;") && (aLink != BaseUriD) && (aL.classList[0] !== "add_to_compare") && (aL.offsetParent.localName !== "h4")){
-	      			setTimeout(function () {openLoader() }, 300);
-	      			console.log("Spinner a mostrar");
-	      			//elimando spinner si hacen scroll
-				     	 /* $(document).on('scroll', function(){
-				     	  	closeLoader();});*/
+				/*-------- Condiciones para aplicar spinner loader -------------*/
+				if((aL.localName = "a") && (aLinksplit == "http" || aLinksplit == "https")){
+				  	if((aLinksplit !="delete" || aLinksplit != "add") && (aL.href.split(".")[1] != "html#") && (aL.dataset.zoomId != "MagicZoomPlusImageMainImage") && (aParentClass != "shopping_cart") && ("remove_link") && (aLink != aBaseUri) && (aLink !== null) && (aLink != "javascript:;") && (aLink != BaseUriD) && (aL.classList[0] !== "add_to_compare") && (aL.offsetParent.localName !== "h4")){
+			      			setTimeout(function () {openLoader() }, 300);
+			      			console.log("Spinner a mostrar");
 
-			      	if((aLinksplit2b == "page")){
-			      		setTimeout(function () {closeLoader() }, 300);
-			      		console.log("spinner loader out 2");
-		     		}else{}
-	     	}else{
-		     	console.log("No se puede mostrar spinner")}
-		  }
-		  console.log("Spinner in/out");
+					      	if((aLinksplit2b == "page")){
+					      		setTimeout(function () {closeLoader() }, 300);
+					      		console.log("spinner loader out 2");
+				     		}else{}
+			     	}else{
+				     	console.log("No se puede mostrar spinner")}
+				  }
+				  console.log("Spinner in/out");
+			}
 		});
-	//}
-}
- 
+  
 
-        // $('.shopping_cart').find('a').on("click tap", setTimeout(closeLoader(),300));
-     	//$('#button_order_cart').on("click tap", setTimeout(openLoader(),900));
+     setTimeout(function () {openLoader() }, 300);
+			      			console.log("Spinner a mostrar");
 
      	 function openLoader(e){
 			//loader.css({visibility:"visibe",opacity:"100"});
@@ -225,12 +231,39 @@ if(window.innerWidth < 768) {
 	
 /*==================== SECTION CHECKOUT - FORM SLIDEDOWN =======================*/
 	// LOGIN FORM
+	var newAccountForm = $('#new_account_form');
+
+	
     $(document).on('click', '#openLoginFormBlock', function(e) {
       e.preventDefault();
-      $('#new_account_form').slideDown('slow');
+      newAccountForm.slideDown('slow');
     });
 
     /* Esta sección se quedará oculta ---*/
+    newAccountForm.on('click', '#opc_createAccount', scrollForm);
+    newAccountForm.on('click', '#opc_guestCheckout', scrollForm);
+
+    function scrollForm(e){
+    	//console.log(newAccountForm.scrollTop() + " px");
+    	//console.log("hola");
+    	setTimeout(window.scrollTo(0,600), 600);
+    }
+    
+
+ /*==================== SHOW ORDEN RESUMEN BEHAVIOR =======================*/
+$('#show-orden').on('click', ".span", function(){
+ //$('#show-orden').find('#order-detail-content').toggleClass("active");
+ $('#show-orden').toggleClass("active");
+ $('#show-orden').find('#order-detail-content').toggle(300, 'swing');
+ });
+
+$('#show-orden').find('.close-resumen').on('click', function(e){
+	 $('#show-orden').find('#order-detail-content').hide();
+	 $('#show-orden').toggleClass("active");
+	 e.preventDefault();
+});
+
+
 
  /*==================== SECTION REGISTER - FORM =======================*/
  	//FUNCTION UTILIZED ON CUSTOMER_ACCOUNT_FORM.TPL DELUXES
