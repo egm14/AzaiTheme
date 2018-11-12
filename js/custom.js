@@ -1,8 +1,9 @@
  
-/*=========== Fancy spinner effect press CHECKOUT button ==========*/
-  		$(window).on('ready', function () {
+/*=========== Fancy spinner - Windows ==========*/
+$(window).on('ready', function () {
 	      setTimeout(function () {
-		    $(".loader-page").css({visibility:"hidden",opacity:"0"})
+		    //$(".loader-page").css({visibility:"hidden",opacity:"0"})
+		    $(".loader-page").hide();
 		  }, 300);
 		  console.log("Spinner fuera luego del documento estar ready");
 		});
@@ -27,66 +28,98 @@ $(document).ready(function(){
     	},3000);
      });
 
-     function openLoader(e){
-		$(".loader-page").css({visibility:"visibe",opacity:"100"});
-		console.log("Estoy abriendo loader");
-     }
-     function closeLoader(e){
-		$(".loader-page").css({visibility:"hidden",opacity:"0"});
-		console.log("Estoy cerrando loader");
-     }
+     var loader = $(".loader-page");
+    
 
-     /*==================== SPINNER ELEMENT LINK A  =======================*/
-     $('a').on('click tap', function loadSpiner(event) {
-     	/*-------- Depurando variables --------------*/
-     	var aL = event.currentTarget;
-     	var alName = aL.localName;
-     	var aParentClass = aL.offsetParent.children[0].lastChild.className;
-     	var aLink = aL.href;
-     	var aLinksplit = aLink.split(":")[0];
-     	var aBaseUri = aL.baseURI;
-     	var BaseUriD = aBaseUri + "#";
+     /*==================== SPINNER ELEMENT LINK A TO MOBILE  =======================*/
+
+
+		var aElem = $('body');
+		
+     	Hammer(aElem[0]).on("tap", function(event){
+     		var aL = event.target;
+     		//console.log("Se ha hecho: "+ event.type);
+     		//console.log(aL.localName);
+     		//console.log("padre : "+ aL.offsetParent.localName);
+     		console.log(event);
+
+     		if((aL.localName == "a") || (aL.offsetParent.localName == "a")){
+     			console.log("es un elemnto aA -AAAAAA");
+     		 
+     		 /*-------- Depurando variables --------------*/
      	
-     	console.log("OffSetParent: " + alName);	
+		     	//var alName = event.handleObj.selector || "undefine";
+		     	var aParentClass = aL.parentNode.className;	
+		     	var aBaseUri = aL.baseURI;
+		     	var BaseUriD = aBaseUri + "#";
 
-     	console.log("Elemento href: " + aLink);
-     	console.log("aBaseUri: " + aBaseUri);
-     	console.log("location.href: " + location.href);
-     	console.log("Split element: " + aLinksplit);
-     	console.log(aParentClass);
-     	console.log(event);
+		     	if(aL.href){
+		     		var aLink = aL.href;
+		     		console.log("Elemento href: " + aLink);
+		     		var aLinksplit = aLink.split(":")[0];
+		     		/*--------- REcorriendo URL SPLIT - comprobando query ----------*/
+		     		if(aLink.indexOf('?') != -1){
+					aLinksplit = aLink.split("?")[1].split("=")[0];
+					console.log("Delete link:" + aLinksplit);
+					//console.log("Simbolo de: ?");
+					}
 
-  		/*--------- REcorriendo URL SPLIT - comprobando query ----------*/
-		if(aLink.indexOf('?') != -1){
-			aLinksplit = aLink.split("?")[1].split("=")[0];
-			console.log("Delete link:" + aLinksplit);
-			console.log("Simbolo de: ?");
-		}
+					/*--------Recorriendo URL SPLIT - comprobar si contiene pagination --------*/
+				var aLinksplit2 = aLink.split("/");
+				var abSplit = aLinksplit2.length - 1;
+				var aLinksplit2b = aLinksplit2[abSplit].split("-")[0];
+				//console.log(aLinksplit2);
+				console.log(aLinksplit2b);
+		     }
+		     	
+		     	//console.log("Selector " + alName);	
+		     	//console.log("data-image: " + aL.dataset.zoomId);
+		     	//console.log("aBaseUri: " + aBaseUri);
+		     	//console.log("location.href: " + location.href);
+		     	//console.log("Split element: " + aLinksplit);
+		     	console.log(aParentClass);
+		     	//console.log(event);
 
-		/*--------Recorriendo URL SPLIT - comprobar si contiene pagination --------*/
-		var aLinksplit2 = aLink.split("/");
-		var abSplit = aLinksplit2.length - 1;
-		var aLinksplit2b = aLinksplit2[abSplit].split("-")[0];
-		//console.log(aLinksplit2);
-		console.log(aLinksplit2b);
+		     	if(aL.parentElement.localName == "a"){
+		     		if(aL.parentElement.href.split(".")[1] == "html"){
+		     		setTimeout(function () {openLoader() }, 300);
+			      			console.log("Spinner a mostrar padre.");
+		     	}else{
+		     		console.log("No se puede mostrar Spinner padre.");
+		     	}
+		     }
 
-		/*-------- Condiciones para aplicar spinner loader -------------*/
-		  if((aL.localName = "a") && (aLinksplit !="delete" || aLinksplit != "add") && (aParentClass != "shopping_cart") && (aLinksplit == "http" || aLinksplit == "https") && ("remove_link") && (aLink != aBaseUri) && (aLink !== null) && (aLink != "javascript:;") && (aLink != BaseUriD) && (aL.classList[0] !== "add_to_compare") && (aL.offsetParent.localName !== "h4")){
-	      		//openLoader();
-	      	console.log("Spinner a mostrar");
-	      	if((aLinksplit2b == "page")){
-	      		setTimeout(function () {closeLoader() }, 800);
-	      		console.log("spinner loader out 2");
-     		}else{}
-	      }else{
-	      	console.log("No se puede mostrar spinner");
-	      }
-		  console.log("Spinner in/out");
+				/*-------- Condiciones para aplicar spinner loader -------------*/
+				if((aL.localName = "a") && (aLinksplit == "http" || aLinksplit == "https")){
+				  	if((aLinksplit !="delete" || aLinksplit != "add") && (aL.href.split(".")[1] != "html#") && (aL.dataset.zoomId != "MagicZoomPlusImageMainImage") && (aParentClass != "shopping_cart") && ("remove_link") && (aLink != aBaseUri) && (aLink !== null) && (aLink != "javascript:;") && (aLink != BaseUriD) && (aL.classList[0] !== "add_to_compare") && (aL.offsetParent.localName !== "h4")){
+			      			setTimeout(function () {openLoader() }, 300);
+			      			console.log("Spinner a mostrar");
+
+					      	if((aLinksplit2b == "page")){
+					      		setTimeout(function () {closeLoader() }, 300);
+					      		console.log("spinner loader out 2");
+				     		}else{}
+			     	}else{
+				     	console.log("No se puede mostrar spinner")}
+				  }
+				  console.log("Spinner in/out");
+			}
 		});
+  
 
-        // $('.shopping_cart').find('a').on("click tap", setTimeout(closeLoader(),300));
-     	//$('#button_order_cart').on("click tap", setTimeout(openLoader(),900));
+     setTimeout(function () {openLoader() }, 300);
+			      			console.log("Spinner a mostrar");
 
+     	 function openLoader(e){
+			//loader.css({visibility:"visibe",opacity:"100"});
+			loader.show();
+			console.log("Estoy abriendo loader");
+    	 }
+	     function closeLoader(e){
+			//loader.css({visibility:"hidden",opacity:"0"});
+			loader.hide();
+			console.log("Estoy cerrando loader");
+	     }
      /*==================== SIZE CHART  =======================*/
 
      /* SIZE - CHART- FANCYBOX*/
@@ -132,7 +165,6 @@ $(document).ready(function(){
 	   
   /*========= END SIZE CHART ==============*/
 
-
   /*================== SECTION PRODUCT VIEW - PINCH PAN =================*/
 	// General Mobile Events
 	/*if (window.innerWidth < 768) {
@@ -174,6 +206,7 @@ $(document).ready(function(){
 		 console.log("img.fancybox-inner está aquí");
 		});
 	}*/
+
 	/*==================== LOGIN-CONTENT DISPLAY WHEN PRESS MENU =======================*/
 	// LOGIN FORM
 	var mobilmenu = $('.top_menu').find('.menu-title');
@@ -198,12 +231,39 @@ $(document).ready(function(){
 	
 /*==================== SECTION CHECKOUT - FORM SLIDEDOWN =======================*/
 	// LOGIN FORM
+	var newAccountForm = $('#new_account_form');
+
+	
     $(document).on('click', '#openLoginFormBlock', function(e) {
       e.preventDefault();
-      $('#new_account_form').slideDown('slow');
+      newAccountForm.slideDown('slow');
     });
 
     /* Esta sección se quedará oculta ---*/
+    newAccountForm.on('click', '#opc_createAccount', scrollForm);
+    newAccountForm.on('click', '#opc_guestCheckout', scrollForm);
+
+    function scrollForm(e){
+    	//console.log(newAccountForm.scrollTop() + " px");
+    	//console.log("hola");
+    	setTimeout(window.scrollTo(0,600), 600);
+    }
+    
+
+ /*==================== SHOW ORDEN RESUMEN BEHAVIOR =======================*/
+$('#show-orden').on('click', ".span", function(){
+ //$('#show-orden').find('#order-detail-content').toggleClass("active");
+ $('#show-orden').toggleClass("active");
+ $('#show-orden').find('#order-detail-content').toggle(300, 'swing');
+ });
+
+$('#show-orden').find('.close-resumen').on('click', function(e){
+	 $('#show-orden').find('#order-detail-content').hide();
+	 $('#show-orden').toggleClass("active");
+	 e.preventDefault();
+});
+
+
 
  /*==================== SECTION REGISTER - FORM =======================*/
  	//FUNCTION UTILIZED ON CUSTOMER_ACCOUNT_FORM.TPL DELUXES
@@ -222,7 +282,4 @@ $(document).ready(function(){
   //                   console.log("Selección:Retail");
   //               }
   //           });
-
-
-
 });

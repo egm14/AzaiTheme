@@ -64,52 +64,10 @@
   {/if}
 
   {include file="$tpl_dir./global.tpl"}
-  <!-- Custom javascript call after Slider Revolution - to no conflict -->
+  <!-- Custom javascript call after Slider Revolution - to no conflict -->  
+     <script type="text/javascript" src="{$js_dir}hammer.min.js"></script>
       <script type="text/javascript" src="{$js_dir}custom.js"></script>
-      <!--<script type="text/javascript">
-                /*================== SECTION PRODUCT VIEW - PINCH PAN =================*/
-          // General Mobile Events
-          if (window.innerWidth < 768) {
-            console.log("pantalla menor de 768px");
-
-            //Fancybox mobile "Pinch Pan"
-            var elemet1 = ($('#image-block'))[0]; 
-            var mc1 = new Hammer(elemet1);
-
-            mc1.on("tap", function(ev){
-              console.log("Se ha hecho: "+ ev.type);
-
-              if($('.fancybox-opened').length < 0){
-                console.log("No se ha creado el div.fancybox-opened");
-                }else{
-                  setTimeout(function(){
-                    console.log("Añadiendo div after");
-                    var zoomdiv = $('.fancybox-skin');
-                  //zoomdiv.css("background-color","blue");
-                    zoomdiv.after("<div class=" +"pinch-zoom"+">Pinch To Zoom</div>");
-                  
-                    //Desaparecer Pinch-zoom al tocar
-                var element2 = ($('.fancybox-inner'))[0];
-                var mc2 = new Hammer.Manager(element2);
-
-                var pinch = new Hammer.Pinch();
-                  var pan = new Hammer.Pan();
-
-                  pinch.recognizeWith(pan);
-                  mc2.add([pinch, pan]);
-                
-
-                mc2.on("pinchstart panstart", function (ev) {
-                    console.log("Clase deshabilitada por: " + ev.type);
-                    $('.pinch-zoom').addClass('disable');
-                  });
-                  },100);
-                }
-             console.log("img.fancybox-inner está aquí");
-            });
-          }
-
-      </script>-->
+      
   </body>
     
 </html>
