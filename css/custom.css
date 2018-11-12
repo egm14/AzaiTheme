@@ -2795,3 +2795,13 @@ a#total_price_without_tax {
     text-decoration: underline;
     float:right;
 }
+/* Add Border register Form */
+input#email {
+border: solid 1px #2196F3;
+}
+input#email_create {
+border: solid 1px #2196F3;
+}
+input#passwd {
+border: solid 1px #2196F3;
+}
