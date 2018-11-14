@@ -1271,7 +1271,7 @@ input {
     }
     ul.menu-myaccount.header-login-content.toogle_content {
     display: block!important;
-    }
+}
 }
 
 
@@ -2697,18 +2697,27 @@ i.icon-heart::before {
 /*Null Requered label checkout*/
 p.required.opc-required.pull-right {
     display: none;
-}  
-ul#homecategoriez {
-    column-count: 2;
-    column-gap: 0px;
+} 
+/* Home categories*/
+#homecategoriez li.ajax_block_product {
+    padding-bottom: 0px!important;
+    padding: 0px 5px 0px 5px;
 }
-ul#homecategoriez a img {
+ul#homecategoriez {
+    columns: 2;
+    column-gap: 0px;
+    
+}
+ul#homecategoriez a img {   
     object-fit: cover;
     object-position: right;
-    min-height: 100px;
+    min-height: 150px;
     width: auto;
     shape-margin: unset;
     shape-outside: content-box;
+    webkit-box-shadow: 2px 7px 21px 3px rgba(0, 0, 0, 0.97);
+    border: solid #7d7b7d24 5px;
+    border-radius: 5px;
 }
 ul#homecategoriez .right-blok {
     width: auto;
@@ -2721,19 +2730,19 @@ ul#homecategoriez .right-blok {
     bottom: 0;
     background-color: #f0f8ff05;
 }
-
-/*ul.product_list.grid > li .product-container .right-block {
-    padding: 51px 15px 35px;
-    top: -60px;
-    background: #0000006e;
-    margin: -41px 1px -20px -1px;
-}*/
-
-ul.product_list.grid > li .product-container h5 a.product-name {
+ul.product_list.grid > li .product-container h5 a.product-name { 
     font-family: Helvetica, sans-serif;
-   /* color: #ffffff;*/
-    font-size: 13px;
+    /* color: #ffffff; */
+    font-size: 12px;
     line-height: 15px;
+    text-decoration: underline;
+    font-weight: bold;
+}
+ul#home-page-tabs {
+    text-align: center;
+}
+ul.product_list.grid > li {
+    padding-bottom: 0px!important;
 }
 @media (max-width: 479px){
 ul.product_list.grid > li .product-container .old-price {
@@ -2794,6 +2803,11 @@ a#total_price_without_tax {
     color: #ffffff;
     text-decoration: underline;
     float:right;
+}
+#order-opc .page-heading.step-num {
+    position: relative;
+    padding-left: 45px;
+    overflow: overlay;
 }
 /* Add Border register Form */
 input#email {
