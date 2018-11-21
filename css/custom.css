@@ -2710,14 +2710,15 @@ ul#homecategoriez {
 }
 ul#homecategoriez a img {   
     object-fit: cover;
-    object-position: right;
+   /* object-position: right;*/
     min-height: 150px;
     width: auto;
     shape-margin: unset;
     shape-outside: content-box;
     webkit-box-shadow: 2px 7px 21px 3px rgba(0, 0, 0, 0.97);
-    border: solid #7d7b7d24 5px;
+    border: solid #7d7b7d24 2px;
     border-radius: 5px;
+        height: 263px;
 }
 ul#homecategoriez .right-blok {
     width: auto;
@@ -2733,13 +2734,19 @@ ul#homecategoriez .right-blok {
 ul.product_list.grid > li .product-container h5 a.product-name { 
     font-family: Helvetica, sans-serif;
     /* color: #ffffff; */
-    font-size: 12px;
+    font-size: 11px;
     line-height: 15px;
     text-decoration: underline;
     font-weight: bold;
+        text-transform: uppercase;
 }
 ul#home-page-tabs {
     text-align: center;
+}
+#homecategoriez .right-block {
+    background: #ffffffb8;
+    top: -35px;
+    padding: 10px;
 }
 ul.product_list.grid > li {
     padding-bottom: 0px!important;
