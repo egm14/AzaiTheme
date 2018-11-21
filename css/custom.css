@@ -137,19 +137,22 @@ button.btn-md.btn.btn-default.icon-right {border: solid 1px #aaaaaa;}
 }
 #header-login div.current a.login:before{display:none;content:"";}
 #header > .wrapper .module{vertical-align: baseline;}
+a[title="My returns"]{
+    display:none!important;
+}
 
 /*Header login - sow */
  #header-login div.current a.dropdown.login span{display:inline-block!important;text-decoration:underline;}
 /*Scroll left top - banner Text */
 #ship{width:100%!important;height:25px;background:black;color:white;display:block!important;text-transform:uppercase;font-size:0.8em;margin-bottom: 4px; margin: 0px 0px 0px 0px;text-align:center;}
 #ship div.ship-text{
-    width:100%;
+    width:max-content;
     height:25px;
     position:absolute;
     top:0;
     left:0;
     margin-bottom:0px;
-    overflow:hidden;
+    overflow-y:hidden;
     animation: TextScroll 30s linear infinite;
     -webkit-animation: TextScroll 30s linear infinite;
     -moz-animation: TextScroll 30s linear infinite;
