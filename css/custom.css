@@ -2706,7 +2706,8 @@ p.required.opc-required.pull-right {
 ul#homecategoriez {
     columns: 2;
     column-gap: 0px;
-    
+    top: -25px;
+    position: relative;
 }
 ul#homecategoriez a img {   
     object-fit: cover;
