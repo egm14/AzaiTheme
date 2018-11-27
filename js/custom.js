@@ -41,7 +41,7 @@ $(document).ready(function(){
      		//console.log("Se ha hecho: "+ event.type);
      		//console.log(aL.localName);
      		//console.log("padre : "+ aL.offsetParent.localName);
-     		console.log(event);
+     		//console.log(event);
 
      		if((aL.localName == "a") || (aL.offsetParent.localName == "a")){
      			console.log("es un elemnto aA -AAAAAA");
@@ -208,25 +208,39 @@ $(document).ready(function(){
 	}*/
 
 	/*==================== LOGIN-CONTENT DISPLAY WHEN PRESS MENU =======================*/
-	// LOGIN FORM
+	// VARIABLE AND ACTION TO OPEN MOBILE MENU COMPLETE
 	var mobilmenu = $('.top_menu').find('.menu-title');
 	var menulogin = $('#header-login');
 	
-	mobilmenu.on("touchstart", function(e){
-		$('.top_menu').find('.iconos-menu-mobile').toggleClass('active-imb');
-		console.log('click creado para abrir nuevo menu');
+	mobilmenu.on("touchstart", OpenMobilMenuIcon);
+	$('.icon-menu-login').on("touchstart", OpenMobilMenu);
+
+	//OPEN MOBILE MENU FROM FOOTER -> CATEGORY MENU
+	$('#footer').find('section.blockcategories_footer.footer-block h4').on("touchstart", function(e){
+		e.preventDefault();
+		OpenMobilMenuIcon();
+		$('ul.top-level-menu').show().animate({ scrollTop: '0px'});
+		console.log("Hiciste click en category footer");
 	});
 
-	$('.icon-menu-login').on("touchstart", function(e){
-		var menuloginul = menulogin.find('ul.header-login-content');
-		menulogin.find('ul.header-login-content').toggleClass("active-b");
-		menulogin.find('.tm_header_user_info').toggleClass("active");
-		/*---------- SCROLL TO BOTTOM WHEN OPEN DE LOGIN MENU-----------*/
-		/*$('ul.top-level-menu').animate({ scrollTop: $(document).height() }, 'slow');*/
-		setTimeout($('ul.top-level-menu').animate({ scrollTop: $(document).height() }, 'slow'), 600);
-      	console.log('slow down icon menu');
+		//FUNCTION TO OPEN ICON UPSET TO MOBILE MENU
+		function OpenMobilMenuIcon(e){
+			$('.top_menu').find('.iconos-menu-mobile').toggleClass('active-imb');
+			console.log('click creado para abrir iconos mobile menu');
+		}
+		//FUNCTION TO SHOW MOBILE MENU
+	 	function OpenMobilMenu(e){
+			var menuloginul = menulogin.find('ul.header-login-content');
+			menulogin.find('ul.header-login-content').toggleClass("active-b");
+			menulogin.find('.tm_header_user_info').toggleClass("active");
+			
+			/*---------- SCROLL TO BOTTOM WHEN OPEN DE LOGIN MENU-----------*/
+			setTimeout($('ul.top-level-menu').animate({ scrollTop: $(document).height() }, 'slow'), 600);
+	      	console.log('slow down icon menu');
       	
-      });
+      }
+
+	//
     /*==================== MENU LOGIN SESIÓN - MOBILE =======================*/
 	
 /*==================== SECTION CHECKOUT - FORM SLIDEDOWN =======================*/
