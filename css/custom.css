@@ -2830,7 +2830,7 @@ border: solid 1px #2196F3;
 input#passwd {
 border: solid 1px #2196F3;
 }
-ul#homeslider {
+/*ul#homeslider {
     min-height: 0px!important;
 }
 li.homeslider-container {
@@ -2839,4 +2839,4 @@ li.homeslider-container {
 #homepage-slider img {
     webkit-transform: translate(-0%,-50%)!important;
     transform: translate(-0%,-50%)!important;
-}
+}*/
