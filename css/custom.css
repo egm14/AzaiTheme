@@ -1,6 +1,6 @@
 /*
 CSS Personalizado para la Tienda AZAI Store
-By Azai.com
+By Azai.com them
 */
 
 /*Zoom products*/
@@ -137,19 +137,22 @@ button.btn-md.btn.btn-default.icon-right {border: solid 1px #aaaaaa;}
 }
 #header-login div.current a.login:before{display:none;content:"";}
 #header > .wrapper .module{vertical-align: baseline;}
+a[title="My returns"]{
+    display:none!important;
+}
 
 /*Header login - sow */
  #header-login div.current a.dropdown.login span{display:inline-block!important;text-decoration:underline;}
 /*Scroll left top - banner Text */
 #ship{width:100%!important;height:25px;background:black;color:white;display:block!important;text-transform:uppercase;font-size:0.8em;margin-bottom: 4px; margin: 0px 0px 0px 0px;text-align:center;}
 #ship div.ship-text{
-    width:100%;
+    width:max-content;
     height:25px;
     position:absolute;
     top:0;
     left:0;
     margin-bottom:0px;
-    overflow:hidden;
+    overflow-y:hidden;
     animation: TextScroll 30s linear infinite;
     -webkit-animation: TextScroll 30s linear infinite;
     -moz-animation: TextScroll 30s linear infinite;
@@ -295,7 +298,7 @@ div.gc-section-content .gc-receptmode-options .gc-receptmode-option span input{
 }
 a.btn{
     font-family:sans-serif;
-    font-weight:600;
+    font-weight:600;g
 }
 
 /*ChekInput*/
@@ -884,10 +887,10 @@ div#product-description-tab-content ul li{
 }
 
 /*--------------- BTNS LOGIN USER ---------------------*/
-button.btn.btn-secondary.btn-sm {
+button.btn.btn-secondary.btn-sm{
     background-color:black;
     -webkit-box-shadow:0px 0px!important;
-    box-shadow:0px 0px!important;
+            box-shadow:0px 0px!important;
 }
 }
 
@@ -1217,6 +1220,8 @@ input {
     height: 100%;
 }
 }
+
+
 /***************************************************************
  ******************* Screen Max-width 720x *********************
  ***************************************************************/
@@ -1268,7 +1273,7 @@ input {
         width:auto;
     }
     ul.menu-myaccount.header-login-content.toogle_content {
-    /*display: block!important;*/
+    display: block!important;
 }
 }
 
@@ -1695,6 +1700,7 @@ div#stage {
     height: 462px;
     width: 100%;
 }
+
 }
 /***************************************************************
  ******************* Screen Max-width 375px *********************
@@ -2419,7 +2425,7 @@ button.btn.btn-secondary.btn-sm {
     overflow:scroll;
   }*/
 /*Border top solo en el menu dress*/
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 768px){
 a.it_20480046.top-level-menu-li-a.tmmegamenu_item {
    /*border-top: 1px solid #cccccc;*/ 
     }
@@ -2705,7 +2711,6 @@ ul#homecategoriez {
     column-gap: 0px;
     top: -25px;
     position: relative;
-    
 }
 ul#homecategoriez a img {   
     object-fit: cover;
