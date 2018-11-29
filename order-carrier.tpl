@@ -34,7 +34,7 @@
               {else}
                 {l s='Choose a shipping option'}
               {/if}
-              <span class="zone_map"><a class="sizes-chart"  style="background-color:black; color:white; text-align:right; padding:5px 10px; text-decoration:none; border-radius:10px;" href="{$base_dir}themes/azai-theme/assets/ups_map.pdf">{l s='Consult transit time by state'}</a></span>
+              
             </p>
 
             <div class="delivery_options">
@@ -275,6 +275,7 @@
         </div> <!-- end delivery_options_address -->
         <div id="extra_carrier" style="display: none;"></div>
         {if $opc}
+          <p style="margin-bottom:15px"><span class="zone_map"><a class="sizes-chart"  style="background-color:black;text-decoration:underline; color:white; text-align:right; padding:5px 10px!important; text-decoration:none; border-radius:10px;" href="{$base_dir}themes/azai-theme/assets/ups_map.pdf">{l s='Consult transit time by state'}</a></span></p>
           <p class="carrier_title">{l s='Leave a message'}</p>
           <div>
             <p>{l s='If you would like to add a comment about your order, please write it in the field below.'}</p>

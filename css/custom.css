@@ -768,7 +768,8 @@ button.stripe-button-el:hover{
     -webkit-transform: scale(1.0);
   }
 }
-
+/*-------------- bottom account box - logout --------*/
+a.btn.btn-primary.btn-md{margin:0px;}
 
 /*------------- Affiliate Program -------------*/
 .center_column .tab_container .tabs_content{
@@ -1272,9 +1273,10 @@ input {
     .table tbody > tr > td.cart_quantity .cart_quantity_button{
         width:auto;
     }
-    ul.menu-myaccount.header-login-content.toogle_content {
+    ul.menu-myaccount.header-login-content.toogle_content.active 
+    .header-login-content-active {
     display: block!important;
-}
+    }
 }
 
 
