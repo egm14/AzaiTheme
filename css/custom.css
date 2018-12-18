@@ -130,11 +130,13 @@ button.btn-md.btn.btn-default.icon-right {border: solid 1px #aaaaaa;}
 /***************************************************************
  ******************* General CSS Changel  *********************
  ***************************************************************/
-
+ 
+ 
 body{-webkit-user-select: auto!important; /* Safari 3.1+ */
   -moz-user-select: auto!important; /* Firefox 2+ */
   -ms-user-select: auto!important; /* IE 10+ */
   user-select: auto!important; /* Standard syntax */}
+
 /*Cart price - Shipping Price */
 .cart_block .cart_block_list > .cart-prices{
     display:none;
@@ -772,8 +774,7 @@ button.stripe-button-el:hover{
     -webkit-transform: scale(1.0);
   }
 }
-/*-------------- bottom account box - logout --------*/
-a.btn.btn-primary.btn-md{margin:0px;}
+
 
 /*------------- Affiliate Program -------------*/
 .center_column .tab_container .tabs_content{
@@ -1216,7 +1217,7 @@ p.required.opc-required.pull-right {
     top: 10px;
 }
 #carrier_area td {
-    width: 55%;
+    width: 50%;
 }
 a.sizes-chart {
     padding: 0px 10px!important
@@ -1277,10 +1278,9 @@ input {
     .table tbody > tr > td.cart_quantity .cart_quantity_button{
         width:auto;
     }
-    ul.menu-myaccount.header-login-content.toogle_content.active 
-    .header-login-content-active {
+    ul.menu-myaccount.header-login-content.toogle_content {
     display: block!important;
-    }
+}
 }
 
 
@@ -2607,7 +2607,7 @@ div#advansedwishlist_block {
 @media (max-width: 479px){
 .sale-box {
     right: auto;
-    left: 148px;
+    /*left: 148px;*/left: 130px;
 }
 
 a.sale-box {
@@ -2627,7 +2627,7 @@ a.sale-box {
     -webkit-border-radius: 0px;
     border-radius: 0px;
     width: 31px!important;
-    min-width: 31px;
+    /*min-width: 31px;*/
 }
 }
 .price-percent-reduction {
@@ -2836,10 +2836,26 @@ border: solid 1px #2196F3;
 input#passwd {
 border: solid 1px #2196F3;
 }
-#header .icon-links #currencies-block-top, #header .icon-links #languages-block-top {
-    margin-right: 15px!important;
+/*ul#homeslider {
+    min-height: 0px!important;
 }
-#currencies-block-top ul li.selected, #currencies-block-top ul li.selected a, #currencies-block-top ul li a:hover, #currencies-block-top ul li a:focus {
-    color: #000000!important;
-    font-weight: bold!important;
+li.homeslider-container {
+    width: 0px!important;
+}
+#homepage-slider img {
+    webkit-transform: translate(-0%,-50%)!important;
+    transform: translate(-0%,-50%)!important;
+}*/
+@media (max-width: 540px){
+.tingle-modal--noOverlayClose {
+    padding-top: 50%;
+    padding: 200px 5px 0px 5px;
+}
+}
+#submitGuestAccount span {
+    text-decoration: underline;
+}
+
+#order-opc #opc_account_form .checkbox label[for="invoice_address"]{
+display:none;
 }
