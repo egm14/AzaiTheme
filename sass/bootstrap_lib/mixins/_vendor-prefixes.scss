@@ -235,9 +235,10 @@
 // User select
 // For selecting text on the page
 
-@mixin user-select($select) {
+@mixin user-select($select: auto) {
   -webkit-user-select: $select;
   -moz-user-select: $select;
   -ms-user-select: $select; // IE10+
   user-select: $select;
+
 }

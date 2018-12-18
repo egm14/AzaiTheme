@@ -62,7 +62,17 @@
                               <strong>{$carrier.instance->name|escape:'htmlall':'UTF-8'}</strong>
                             {/foreach}
                             {if isset($carrier.instance->delay[$cookie->id_lang])}
-                              <br />{l s='Delivery time:'}&nbsp;{$carrier.instance->delay[$cookie->id_lang]|escape:'htmlall':'UTF-8'}
+                              <br />
+
+                              {if $carrier.instance->name == 'Republica Dominicana'}
+                              <ol style="list-style:disc;padding-left:10px;">
+                                <li>{l s='Delivery time:'}&nbsp;{$carrier.instance->delay[$cookie->id_lang]|escape:'htmlall':'UTF-8'}&nbsp;</li>
+                                <li>{l s='Le enviaremos un correo eléctrico con las instrucciones y el número de identificación de su pedido, El cual le permitirá dar seguimiento a su paquete (Traking number).'}</li>
+                                <li>{l s='Al momento de la entrega del paquete  lo estaremos contactando a travez de su número de teléfono. Así garantizamos una entrega satisfactoria.'}</li>
+                              </ol>
+                              {else if}
+                                {l s='Delivery time:'}&nbsp;{$carrier.instance->delay[$cookie->id_lang]|escape:'htmlall':'UTF-8'}
+                              {/if}
                             {/if}
                           {/if}
                           {if count($option_list) > 1}
@@ -275,7 +285,7 @@
         </div> <!-- end delivery_options_address -->
         <div id="extra_carrier" style="display: none;"></div>
         {if $opc}
-          <p style="margin-bottom:15px"><span class="zone_map"><a class="sizes-chart"  style="background-color:black;text-decoration:underline; color:white; text-align:right; padding:5px 10px!important; text-decoration:none; border-radius:10px;" href="{$base_dir}themes/azai-theme/assets/ups_map.pdf">{l s='Consult transit time by state'}</a></span></p>
+          <p style="margin-bottom:15px"><span class="zone_map"><a class="sizes-chart"  style="background-color:black;text-decoration:underline!important; color:white; text-align:right; padding:5px 10px!important; text-decoration:none; border-radius:10px;" href="{$base_dir}themes/azai-theme/assets/ups_map.pdf">{l s='Consult transit time by state'}</a></span></p>
           <p class="carrier_title">{l s='Leave a message'}</p>
           <div>
             <p>{l s='If you would like to add a comment about your order, please write it in the field below.'}</p>

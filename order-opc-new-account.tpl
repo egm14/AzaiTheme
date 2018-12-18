@@ -187,7 +187,7 @@
           {$dniExist = false}
           {foreach from=$dlv_all_fields item=field_name}
             {if $field_name eq "company"}
-              <div class="text form-group">
+              <div class="text form-group" style="display:none;">
                 <label for="company">{l s='Company'}{if in_array($field_name, $required_fields)} <sup>*</sup>{/if}</label>
                 <input placeholder="Name of your company" type="text" class="text form-control validate" id="company" name="company" data-validate="isGenericName" value="{if isset($guestInformations) && isset($guestInformations.company) && $guestInformations.company}{$guestInformations.company}{/if}" />
               </div>
@@ -308,7 +308,7 @@
             <h3 class="page-subheading top-indent">{l s='Invoice address'}</h3>
             {foreach from=$inv_all_fields item=field_name}
               {if $field_name eq "company"}
-                <div class="form-group">
+                <div class="form-group" style="display:none;">
                   <label for="company_invoice">{l s='Company'}{if in_array($field_name, $required_fields)} <sup>*</sup>{/if}</label>
                   <input type="text" class="text form-control validate" id="company_invoice" name="company_invoice" data-validate="isName" value="{if isset($guestInformations) && isset($guestInformations.company_invoice) && $guestInformations.company_invoice}{$guestInformations.company_invoice}{/if}" />
                 </div>

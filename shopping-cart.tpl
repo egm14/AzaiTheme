@@ -290,6 +290,23 @@
         </tbody>
       {/if}
     </table>
+    <!-- Alert to Dominican Republic customer - buy over $200.o0 -->
+    <!-- ### Put this code inside function  _assignCarrier() on ParentOrderController.php ###
+        //create an address object by retrieving the id from the current cart.
+        $address = new Address($this->context->cart->id_address_delivery);
+        //now the country name will now be in the "$address->country" field so if you want to pass it to your smarty template use:
+        $this->context->smarty->assign('country_name', $address->country);
+        $this->context->smarty->assign('country_id', $address->id)
+    -->
+
+    {if $total_price >= 200 && $country_name == 'Dominican Republic'}
+
+        <div class="notification alert alert-warning">
+         <p>{l s="Se aplicarán cargos aduanales en compras mayores a "}<span style="text-decoration:underline;color:black">{l s="USD$200.00. "}</span>{l s="Para mayor información marcar o escribenos a: "}<a href="phone:+1-809-705-8665">{l s="+1(809)705-8665"}</a> | <a href="mailto:autorizaciones@azai.com.com?subject=Compras%20RD%20mayor%20a%20USD$200">{l s="autorizaciones@azai.com"}</a></p>
+        </div>
+    {/if}
+    
+
   </div> <!-- end order-detail-content -->
 
   {if $show_option_allow_separate_package}

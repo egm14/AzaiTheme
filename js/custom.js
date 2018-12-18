@@ -112,7 +112,7 @@ $(document).ready(function(){
 
      	 function openLoader(e){
 			//loader.css({visibility:"visibe",opacity:"100"});
-			loader.show();
+			//loader.show();
 			console.log("Estoy abriendo loader");
     	 }
 	     function closeLoader(e){
