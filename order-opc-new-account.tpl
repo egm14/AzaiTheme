@@ -422,9 +422,14 @@
             </p>
             <button type="submit" name="submitAccount" id="submitAccount" class="btn btn-default btn-md icon-right"><span>{l s='Save'}</span></button>
           </div>
-          <div style="display: none;" id="opc_account_saved" class="alert alert-success">
+          <div style="display: none; margin-top:5px" id="opc_account_saved" class="alert alert-success">
             {l s='Account information saved successfully'}
+
+            <a href="#cart_title" id="next-btn" style="display:block;"><i class="fa fa-arrow-circle-down" aria-hidden="true"></i>&nbsp;{l s='Click aquí para continuar '}
+            </a>
           </div>
+
+
         <!-- END Account -->
         </div>
       </div>

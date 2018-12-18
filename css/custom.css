@@ -898,6 +898,16 @@ button.btn.btn-secondary.btn-sm{
     -webkit-box-shadow:0px 0px!important;
             box-shadow:0px 0px!important;
 }
+#opc_account_saved #next-btn{
+    padding:5px 10px;
+    color:white;
+    background-color:black;
+    border-radius:10px;
+    margin-top:5px;
+    text-align:center;
+}
+#opc_account_saved #next-btn:hover{
+    background-color:darkgray;
 }
 
 /***************************************************************
