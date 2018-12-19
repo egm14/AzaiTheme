@@ -909,6 +909,11 @@ button.btn.btn-secondary.btn-sm{
 #opc_account_saved #next-btn:hover{
     background-color:darkgray;
 }
+body#authentication #create-account_form h3{
+    font-weight:bold;color:white;
+}
+body#authentication #create-account_form label{color:white;}
+body#authentication #create-account_form{background-color:black;color:white;}
 
 /***************************************************************
  ******************* Screen Max-width 1650px *******************

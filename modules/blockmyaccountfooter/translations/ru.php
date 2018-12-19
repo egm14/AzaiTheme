@@ -6,6 +6,7 @@ $_MODULE = array();
 $_MODULE['<{blockmyaccountfooter}prestashop>blockmyaccountfooter_b97d23f7cde011d190f39468e146425e'] = 'Блок "Моя учетная запись" в футере';
 $_MODULE['<{blockmyaccountfooter}prestashop>blockmyaccountfooter_abdb95361b4c92488add0a5a37afabcb'] = 'Отображает блок со ссылками связанными с учетной записью пользователя.';
 $_MODULE['<{blockmyaccountfooter}prestashop>blockmyaccountfooter_ae9ec80afffec5a455fbf2361a06168a'] = 'Управление моей учетной записью';
+$_MODULE['<{blockmyaccountfooter}prestashop>blockmyaccountfooter_d95cf4ab2cbf1dfb63f066b50558b134'] = 'Create new account';
 $_MODULE['<{blockmyaccountfooter}prestashop>blockmyaccountfooter_d95cf4ab2cbf1dfb63f066b50558b07d'] = 'Моя учетная запись';
 $_MODULE['<{blockmyaccountfooter}prestashop>blockmyaccountfooter_74ecd9234b2a42ca13e775193f391833'] = 'Мои заказы';
 $_MODULE['<{blockmyaccountfooter}prestashop>blockmyaccountfooter_5973e925605a501b18e48280f04f0347'] = 'Мои возвраты';

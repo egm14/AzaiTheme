@@ -1,12 +1,12 @@
 <!-- Block myaccount module -->
 <section class="footer-block">
   <h4>
-    <a href="{$link->getPageLink('my-account', true)|escape:'html':'UTF-8'}" title="{l s='Manage my customer account' mod='blockmyaccountfooter'}" rel="nofollow">{l s='Account' mod='blockmyaccountfooter'}</a>
+    <a href="{$link->getPageLink('my-account', true)|escape:'html':'UTF-8'}" title="{l s='Manage my customer account' mod='blockmyaccountfooter'}" rel="nofollow">{l s='My account' mod='blockmyaccountfooter'}</a>
   </h4>
   <div class="block_content toggle-footer">
     <ul class="bullet">
       <li>
-        <a href="{$link->getPageLink('my-account', true)|escape:'html':'UTF-8'}" title="{l s='My orders' mod='blockmyaccountfooter'}" rel="nofollow">{l s='Create new account' mod='blockmyaccountfooter'}</a>
+        <a href="{$link->getPageLink('my-account', true)|escape:'html':'UTF-8'}" title="{l s='Create new Account' mod='blockmyaccountfooter'}" rel="nofollow">{l s='Crear nueva cuenta' mod='blockmyaccountfooter'}</a>
       </li>
       <li>
         <a href="{$link->getPageLink('history', true)|escape:'html':'UTF-8'}" title="{l s='My orders' mod='blockmyaccountfooter'}" rel="nofollow">{l s='My orders' mod='blockmyaccountfooter'}</a>

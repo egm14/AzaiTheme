@@ -36,43 +36,105 @@
               {/if}
               
             </p>
-
             <div class="delivery_options">
               {foreach $option_list as $key => $option}
                 <div class="delivery_option {if ($option@index % 2)}alternate_{/if}item">
                   <div>
-                    <table class="resume table table-bordered{if !$option.unique_carrier} hide{/if}">
-                      <tr>
-                        <td class="delivery_option_radio input_without_label">
-                          <input id="delivery_option_{$id_address|intval}_{$option@index}" class="delivery_option_radio" type="radio" name="delivery_option[{$id_address|intval}]" data-key="{$key}" data-id_address="{$id_address|intval}" value="{$key}"{if isset($delivery_option[$id_address]) && $delivery_option[$id_address] == $key} checked="checked"{/if} />
-                        </td>
+                    <!-- Tabla de solution carrier --->
+                   {foreach $option.carrier_list as $carrier}
+                   <!--label for="delivery_option_{$id_address|intval}_{$option@index}" style="width:100%"-->
+                     <table class="resume table table-bordered{if !$option.unique_carrier} hide{/if}">
+                       {if $carrier.instance->name == 'Republica Dominicana'}
+                       
+                      <tr style="background-color:black;color:white;">
                         <td class="delivery_option_logo">
-                          {foreach $option.carrier_list as $carrier}
+                          
                             {if $carrier.logo}
                               <img class="order_carrier_logo" src="{$carrier.logo|escape:'htmlall':'UTF-8'}" alt="{$carrier.instance->name|escape:'htmlall':'UTF-8'}"/>
                             {elseif !$option.unique_carrier}
                               {$carrier.instance->name|escape:'htmlall':'UTF-8'}
                               {if !$carrier@last} - {/if}
                             {/if}
-                          {/foreach}
+                         
+                        </td>
+
+                         <td class="delivery_option_price">
+                          <div class="delivery_option_price">
+                            {if $option.total_price_with_tax && !$option.is_free && (!isset($free_shipping) || (isset($free_shipping) && !$free_shipping))}
+                              {if $use_taxes == 1}
+                                {if $priceDisplay == 1}
+                                  {convertPrice price=$option.total_price_without_tax}{if $display_tax_label} {l s='(tax excl.)'}{/if}
+                                {else}
+                                  {convertPrice price=$option.total_price_with_tax}{if $display_tax_label} {l s='(tax incl.)'}{/if}
+                                {/if}
+                              {else}
+                                {convertPrice price=$option.total_price_without_tax}
+                              {/if}
+                            {else}
+                              <h4 style="margin-top:0px;margin-bottom:0px;">{l s='Shipping Free'}</h4>
+                            {/if}
+                          </div>
+                        </td>
+
+                        <td class="delivery_option_radio input_without_label">
+                          <input id="delivery_option_{$id_address|intval}_{$option@index}" class="delivery_option_radio" type="radio" name="delivery_option[{$id_address|intval}]" data-key="{$key}" data-id_address="{$id_address|intval}" value="{$key}"{if isset($delivery_option[$id_address]) && $delivery_option[$id_address] == $key} checked="checked"{/if} />
+                        </td>
+                      </tr>
+
+                      <tr >
+                        
+                        <td colspan="3">
+                          {if $option.unique_carrier}
+                            
+                              <strong>{$carrier.instance->name|escape:'htmlall':'UTF-8'}</strong>
+                           
+                            {if isset($carrier.instance->delay[$cookie->id_lang])}
+                              <br />
+                                <ol style="list-style:disc;padding-left:10px;">
+                                <li>{l s='Delivery time:'}&nbsp;{$carrier.instance->delay[$cookie->id_lang]|escape:'htmlall':'UTF-8'}&nbsp;</li>
+                                <li>{l s='Le enviaremos un correo eléctrico con las instrucciones y el número de identificación de su pedido, el cual le permitirá dar seguimiento a su paquete (Traking number).'}</li>
+                                <li>{l s='Al momento de la entrega del paquete  lo estaremos contactando a travez de su número de teléfono. Así garantizamos una entrega satisfactoria.'}</li>
+                              </ol>
+                            {/if}
+                          {/if}
+                          {if count($option_list) > 1}
+                          <br />
+                            {if $option.is_best_grade}
+                              {if $option.is_best_price}
+                                <span class="best_grade best_grade_price best_grade_speed">{l s='The best price and speed'}</span>
+                              {else}
+                                <span class="best_grade best_grade_speed">{l s='The fastest'}</span>
+                              {/if}
+                            {elseif $option.is_best_price}
+                              <span class="best_grade best_grade_price">{l s='The best price'}</span>
+                            {/if}
+                          {/if}
+                        </td>
+                      </tr>
+                      <!-- New table to Dominican Republic Text -->
+                      {else}
+                      <!-- Normal table to current carrier -->
+                        <tr>
+                        <td class="delivery_option_radio input_without_label">
+                          <input id="delivery_option_{$id_address|intval}_{$option@index}" class="delivery_option_radio" type="radio" name="delivery_option[{$id_address|intval}]" data-key="{$key}" data-id_address="{$id_address|intval}" value="{$key}"{if isset($delivery_option[$id_address]) && $delivery_option[$id_address] == $key} checked="checked"{/if} />
+                        </td>
+                        <td class="delivery_option_logo">
+                          
+                            {if $carrier.logo}
+                              <img class="order_carrier_logo" src="{$carrier.logo|escape:'htmlall':'UTF-8'}" alt="{$carrier.instance->name|escape:'htmlall':'UTF-8'}"/>
+                            {elseif !$option.unique_carrier}
+                              {$carrier.instance->name|escape:'htmlall':'UTF-8'}
+                              {if !$carrier@last} - {/if}
+                            {/if}
+                          
                         </td>
                         <td>
                           {if $option.unique_carrier}
-                            {foreach $option.carrier_list as $carrier}
+                            
                               <strong>{$carrier.instance->name|escape:'htmlall':'UTF-8'}</strong>
-                            {/foreach}
+                           
                             {if isset($carrier.instance->delay[$cookie->id_lang])}
-                              <br />
-
-                              {if $carrier.instance->name == 'Republica Dominicana'}
-                              <ol style="list-style:disc;padding-left:10px;">
-                                <li>{l s='Delivery time:'}&nbsp;{$carrier.instance->delay[$cookie->id_lang]|escape:'htmlall':'UTF-8'}&nbsp;</li>
-                                <li>{l s='Le enviaremos un correo eléctrico con las instrucciones y el número de identificación de su pedido, El cual le permitirá dar seguimiento a su paquete (Traking number).'}</li>
-                                <li>{l s='Al momento de la entrega del paquete  lo estaremos contactando a travez de su número de teléfono. Así garantizamos una entrega satisfactoria.'}</li>
-                              </ol>
-                              {else if}
-                                {l s='Delivery time:'}&nbsp;{$carrier.instance->delay[$cookie->id_lang]|escape:'htmlall':'UTF-8'}
-                              {/if}
+                              <br />{l s='Delivery time:'}&nbsp;{$carrier.instance->delay[$cookie->id_lang]|escape:'htmlall':'UTF-8'}
                             {/if}
                           {/if}
                           {if count($option_list) > 1}
@@ -106,7 +168,11 @@
                           </div>
                         </td>
                       </tr>
+                    {/if}
                     </table>
+                  <!--/label-->
+                    {/foreach}
+
                     {if !$option.unique_carrier}
                       <table class="delivery_option_carrier{if isset($delivery_option[$id_address]) && $delivery_option[$id_address] == $key} selected{/if} resume table table-bordered{if $option.unique_carrier} hide{/if}">
                         <tr>
