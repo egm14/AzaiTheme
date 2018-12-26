@@ -125,6 +125,7 @@
           </div>
         </div>
       </div>
+      <div class="g-recaptcha" data-sitekey="6LdYjoQUAAAAAAGXIc8zmqFDiuYzVfmfafFD_cEg"></div>
       <div class="submit">
         <button type="submit" name="submitMessage" id="submitMessage" class="btn btn-secondary btn-sm">
           <span>
